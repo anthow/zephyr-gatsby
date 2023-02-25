@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#image-accueil{
+    background-image: url("https://res.cloudinary.com/liono/image/upload/v1675869298/Z%C3%A9phyr/pexels-fauxels-3184419_ki5eiw.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    
+    body{
+        font-family: roboto;
+    }
+    
+    h1,h2,h3,h4,h5,h6{
+        font-family: montserrat;
+    }
+
+    .bg-bleu-z {background-color: "#F29400";
+
+    } 
