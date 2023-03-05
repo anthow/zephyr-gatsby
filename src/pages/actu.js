@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
 						</div>
 					</div>
 				</div>
-				<figure>
+				<figure className="m-auto">
 				<GatsbyImage image={node.imageDeLArticle.gatsbyImageData} alt={node.imageDeLArticle.alt} />
 
 				</figure>

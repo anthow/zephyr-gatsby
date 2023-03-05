@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         "bleu-z": "#1e95d3",
         "orange-z": "#F29400",
+        "gris-z":"#0E3083",
       },
     },
   },
