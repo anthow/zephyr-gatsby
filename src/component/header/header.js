@@ -14,7 +14,7 @@ const Header = () => {
     }
   `)
   return <>
-  <header className="w-full py-5 mb-10  sticky top-0 z-50 bg-white     m-auto">
+  <header className="w-full py-5   sticky top-0 z-50 bg-white     m-auto">
     <article className=" w-12/12 p-2 m-auto  flex justify-between items-center">
       <figure className="">
         <StaticImage
@@ -31,7 +31,7 @@ const Header = () => {
          <Link to="/formations"> <li>Les formations</li></Link>
          <Link to="/activites"> <li>Activités</li></Link>
          <Link to="/actu">  <li>Actualités</li></Link>
-          <li>Contact</li>
+        <Link to="/contact"> <li>Contact</li></Link> 
         </ul>
       </nav>
       <nav className="flex gap-10 items-center">

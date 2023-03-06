@@ -116,7 +116,9 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query {
-    datoCmsPageDAccueil {
+    datoCmsPageDAccueil
+    
+    {
       texteAccroche
       texteMission1
       texteMission2
