@@ -44,6 +44,7 @@ const IndexPage = ({ data }) => (
               }}
             />
           </div>
+          {/*}
           <div className="flex flex-col items-center gap-5">
             <figure>
               <GatsbyImage
@@ -78,6 +79,7 @@ const IndexPage = ({ data }) => (
               }}
             />
           </div>
+            {*/}
         </section>
       </article>
       <article className="w-10/12 m-auto flex flex-col  gap-10">
