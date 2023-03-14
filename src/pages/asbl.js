@@ -18,7 +18,7 @@ const asblPage = ({data}) => {
 		</figure>
 	</article>
 	<article className="m-auto w-10/12 flex flex-col gap-10">
-		<h1 className="text-3xl">{data.datoCmsPageAsbl.titreIntroduction}</h1>
+		<h1 className="text-3xl font-black">{data.datoCmsPageAsbl.titreIntroduction}</h1>
 
 			<div
               className="flex flex-col gap-5"
@@ -28,11 +28,11 @@ const asblPage = ({data}) => {
             />
 	</article>
 	<article className="flex flex-col gap-10 w-10/12 m-auto">
-		<h2 className="text-2xl text-center">Notre Équipe</h2>
-		<section className="flex flex-col gap-10 md:grid grid-cols-3 items-center">
+		<h2 className="text-2xl text-center font-black">Notre Équipe</h2>
+		<section className="flex  flex-col  md:grid grid-cols-3 m-auto gap-y-10">
 		{data.allDatoCmsListeEquipe.edges.map(({ node }) => {
 						
-						return <div className="flex flex-col gap-5 text-center items-center">
+						return <div className="flex flex-col gap-5 text-center   place-self-strech">
 						<figure>
 					
 <GatsbyImage
@@ -42,9 +42,9 @@ const asblPage = ({data}) => {
               />
 						</figure>
 						<div className="flex flex-col gap-2">
-							<h3 className="text-xl ">{node.nomEtPrenomDeLaPersonne}</h3>
-							<p className="text-lg font-bold">{node.fonction}</p>
-							<p>{node.adresseMail}</p>
+							<h3 className="text-lg text-bleu-z ">{node.nomEtPrenomDeLaPersonne}</h3>
+							<p className="text-m font-bold">{node.fonction}</p>
+							<p className="underline">{node.adresseMail}</p>
 							<p>{node.numeroDeTelephone}</p>
 						</div>
 					</div>
@@ -62,7 +62,7 @@ const asblPage = ({data}) => {
               />
 		</figure>
 		<section className="flex flex-col gap-5 gap-10">
-			<h2 className="text-2xl ">{data.datoCmsPageAsbl.titreConseil}</h2>
+			<h2 className="text-2xl font-black ">{data.datoCmsPageAsbl.titreConseil}</h2>
 		<div dangerouslySetInnerHTML={{ __html: data.datoCmsPageAsbl.texteConseil }}/> 
 
 		</section>

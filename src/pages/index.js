@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => (
           <h1 className="text-3xl text-bleu-z font-black">
             {data.datoCmsPageDAccueil.titreAccroche}
           </h1>
-          <div
+          <div className="flex flex-col gap-2"
             dangerouslySetInnerHTML={{
               __html: data.datoCmsPageDAccueil.texteAccroche,
             }}
@@ -25,10 +25,10 @@ const IndexPage = ({ data }) => (
       </article>
 
       <article className="w-10/12 m-auto flex flex-col items-center gap-10">
-        <h2 className="text-2xl">Nos missions</h2>
+        <h2 className="text-2xl font-black">Nos missions</h2>
         <section className="flex flex-col md:flex-row gap-20 justify-between">
           <div className="flex flex-col items-center gap-5">
-            <figure>
+            {/*}<figure>
               <GatsbyImage
                 className=" m-auto max-w-full"
                 image={data.datoCmsPageDAccueil.imageMission1.gatsbyImageData}
@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => (
               />
             </figure>
             <h3 className="text-xl">{data.datoCmsPageDAccueil.titreMission1}</h3>
-
+          {*/}
             <div
               className="text-center"
               dangerouslySetInnerHTML={{
@@ -83,17 +83,17 @@ const IndexPage = ({ data }) => (
         </section>
       </article>
       <article className="w-10/12 m-auto flex flex-col  gap-10">
-        <h2 className="text-2xl">Nos Dernières actualités</h2>
+        <h2 className="text-2xl font-black">Nos Dernières actualités</h2>
         <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
           {data.allDatoCmsActualite.edges.map(({ node }) => {
             return (
               <Link to={"actu/" + node.slug}>
-                <div className="flex flex-col p-5 gap-10 bg-gray-600 text-white">
+                <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
                     <div className="flex flex-col  text-center">
-                    <p className="bg-orange-600 p-2">{node.meta.createdAt}</p>
-                      <div className="bg-orange-800 py-2 px-5 flex flex-col">
+                    <p className="bg-orange-z p-2">{node.meta.createdAt}</p>
+                      <div className="bg-orange-z/80 py-5 px-5 flex flex-col">
                       <p>{node.meta.publishedAt}</p>
 
                       </div>

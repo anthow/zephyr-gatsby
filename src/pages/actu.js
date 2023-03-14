@@ -9,28 +9,30 @@ const IndexPage = ({ data }) => (
     <Layout>
   <main className="flex flex-col gap-10 md:gap-20 mb-20">
 	<article className=" m-auto flex flex-col  gap-10">
-		<h2 className="text-2xl">Nos Dernières actualités</h2>
+	<h2 className="text-2xl font-black">Nos Dernières actualités</h2>
 		<section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
 		{data.allDatoCmsActualite.edges.map(({ node }) => {
 						
           return <Link to={node.slug}>
-			<div className="flex flex-col p-5 gap-10 bg-gray-600 text-white">
-				<div className="flex flex-row gap-10 justify-between items-center">
-					<h3 className="text-xl">{node.nomDeLArticle}</h3>
-					<div className="flex flex-col  text-center">
-						<p className="bg-orange-600 p-2">{node.meta.createdAt}</p>
-						<div className="bg-orange-800 py-2 px-5 flex flex-col">
-							<p>{node.meta.publishedAt}</p>
-						
-						</div>
-					</div>
-				</div>
-				<figure className="m-auto">
-				<GatsbyImage image={node.imageDeLArticle.gatsbyImageData} alt={node.imageDeLArticle.alt} />
+			      <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
+                  <div className="flex flex-row gap-10 justify-between items-center">
+                    <h3 className="text-xl">{node.nomDeLArticle}</h3>
+                    <div className="flex flex-col  text-center">
+                    <p className="bg-orange-z p-2">{node.meta.createdAt}</p>
+                      <div className="bg-orange-z/80 py-5 px-5 flex flex-col">
+                      <p>{node.meta.publishedAt}</p>
 
-				</figure>
-				<p className="italic">{node.catGorie.nomDeLaCategorie}</p>
-			</div>
+                      </div>
+                    </div>
+                  </div>
+                  <figure className="m-auto">
+                    <GatsbyImage
+                      image={node.imageDeLArticle.gatsbyImageData}
+                      alt={node.imageDeLArticle.alt}
+                    />
+                  </figure>
+                  <p className="italic">{node.catGorie.nomDeLaCategorie}</p>
+                </div>
 			</Link>
 			        })}
 
@@ -42,7 +44,7 @@ const IndexPage = ({ data }) => (
 
   export const query = graphql`
   query {
-    allDatoCmsActualite {
+    allDatoCmsActualite (sort: {date: DESC},) {
       edges {
         node {
 			slug

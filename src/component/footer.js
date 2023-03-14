@@ -9,7 +9,7 @@ const Footer = () => (
       {
         datoCmsFooter {
           logoPartenaires {
-            gatsbyImageData(height: 120)
+            gatsbyImageData(height: 100)
             alt
           }
         }
@@ -22,7 +22,7 @@ const Footer = () => (
     render={(data) => (
       <>
         <footer className="flex flex-col gap-20 pb-5">
-          <ul className="w-10/12 m-auto  flex flex-col md:flex-row flex-wrap items-center  gap-10">
+          <ul className="w-10/12 m-auto  flex flex-col md:flex-row flex-wrap items-center  gap-5">
             {data.datoCmsFooter.logoPartenaires.map((node) => (
               <li className=" place-self-center ">
                 {/*}<a href={node.customData.url} rel="noreferrer" target="_blank" >{*/}

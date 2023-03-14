@@ -15,7 +15,7 @@ const blogPost = ({data}) => {
 		<article className="flex flex-col gap-20 w-10/12 m-auto">
 		<section className="flex flex-col gap-2">
 			<h1 className=" text-3xl font-black">{data.datoCmsActualite.nomDeLArticle}</h1>
-			<p className="italic">{data.datoCmsActualite.date}</p>
+			<p className="italic">le {data.datoCmsActualite.date}</p>
 			</section>
 
 			<div dangerouslySetInnerHTML={{ __html: data.datoCmsActualite.texteDeLArticle }}/> 
@@ -30,7 +30,7 @@ const blogPost = ({data}) => {
 export const query = graphql`
 query BlogQuery($url: String) {
 	datoCmsActualite(slug: { eq: $url }) {
-		date
+		date(formatString: "  dddd d MMMM YYYY", locale: "fr")
 		imageDeLArticle {
 		  alt
 		  gatsbyImageData (height:400, width:1400)
@@ -40,6 +40,7 @@ query BlogQuery($url: String) {
 		texteDeLArticle
 	}
 }
+
 `
 export default blogPost
 

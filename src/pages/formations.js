@@ -15,13 +15,13 @@ const formationPage =  ({ data }) => (
 
 		</figure>
 		<section className="flex flex-col gap-5 ">
-			<h1 className="text-3xl">{data.datoCmsPageFormation.titrePage}</h1>
+			<h1 className="text-3xl font-black">{data.datoCmsPageFormation.titrePage}</h1>
       <div dangerouslySetInnerHTML={{ __html: data.datoCmsPageFormation.textePage }}/> 
 
 		</section>
 	</article>
 	
-    <section className="flex flex-col gap-10  ">
+    <section className="flex flex-col gap-20  ">
         {data.allDatoCmsListesFormation.edges.map(({ node },i) => (
                          i % 2 ?
             <article
@@ -36,8 +36,8 @@ const formationPage =  ({ data }) => (
 
         <section className="flex flex-col gap-10 order-1 md:order-2 ">
 			<div className="flex flex-col gap-5">
-			<h2 className="text-2xl">{node.nomDeLaFormation}</h2>
-            <div dangerouslySetInnerHTML={{ __html: node.descriptionPageDAccueil }}/> 
+			<h2 className="text-xl font-black">{node.nomDeLaFormation}</h2>
+            <div className=" flex flex-col gap-2" dangerouslySetInnerHTML={{ __html: node.descriptionPageDAccueil }}/> 
 
 		</div>
 		<div className="flex flex-col md:flex-row gap-5">
@@ -60,7 +60,7 @@ const formationPage =  ({ data }) => (
     
             <section className="flex flex-col gap-10 order-2 md:order-1 ">
                 <div className="flex flex-col gap-5">
-                <h2 className="text-2xl">{node.nomDeLaFormation}</h2>
+                <h2 className="text-xl font-black">{node.nomDeLaFormation}</h2>
                 <div dangerouslySetInnerHTML={{ __html: node.descriptionPageDAccueil }}/> 
     
             </div>
