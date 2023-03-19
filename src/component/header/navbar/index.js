@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import NavbarLink from "./NavbarLink";
+import NavbarLink from "./navbarlink/navbarlkink";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
@@ -90,22 +90,13 @@ const Navbar = () => {
 
   return (
     <Navigation classname=" ">
-      <figure className="block md:hidden">
-        <StaticImage
-          src="https://res.cloudinary.com/liono/image/upload/v1673538982/Z%C3%A9phyr/logo_zephyr_itor5r.png"
-          alt="Logo Zéphyr"
-          width={70}
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-        />
-      </figure>
-      <figure className="hidden md:block">
+      <figure className="">
         <Link to="/"></Link>
 
         <StaticImage
           src="https://res.cloudinary.com/liono/image/upload/v1673538982/Z%C3%A9phyr/logo_zephyr_itor5r.png"
           alt="Logo Zéphyr"
-          width={150}
+          width={100}
           quality={95}
           formats={["auto", "webp", "avif"]}
         />
