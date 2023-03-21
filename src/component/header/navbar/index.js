@@ -11,11 +11,11 @@ const Navigation = styled.nav`
   margin: 0 auto;
   z-index: 999;
   align-items: center;
+  padding:10px;
 
   @media (max-width: 768px) {
     position: fixed;
-    height: 15vh;
-    padding-bottom: 1vh;
+    height: 10vh;
     top: 0;
     left: 0;
     right: 0;
@@ -45,7 +45,7 @@ const Navbox = styled.div`
     position: fixed;
     width: 100%;
     justify-content: flex-start;
-    margin-top: 11vh;
+    margin-top: 10vh;
     background-color: #fff;
     transition: all 0.3s ease-in;
     top: 0vh;
@@ -89,7 +89,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <Navigation classname=" ">
+    <Navigation classname="p-4 ">
       <figure className="">
         <Link to="/"></Link>
 

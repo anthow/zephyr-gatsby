@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const IndexPage = ({ data }) => (
 
     <Layout>
-  <main className="flex flex-col gap-10 md:gap-20 mb-20">
+  <main className="flex mt-10 flex-col gap-10 md:gap-20 mb-20">
 	<article className=" m-auto flex flex-col  gap-10">
 	<h2 className="text-2xl font-black">Nos Dernières actualités</h2>
 		<section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
