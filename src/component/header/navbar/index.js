@@ -14,7 +14,7 @@ const Navigation = styled.nav`
   padding:10px;
 
   @media (max-width: 768px) {
-    position: fixed;
+    position: sticky;
     height: 10vh;
     top: 0;
     left: 0;
@@ -89,7 +89,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <Navigation classname="p-4 ">
+    <Navigation classname="p-4 sm:mb-20 ">
       <figure className="">
         <Link to="/"></Link>
 
