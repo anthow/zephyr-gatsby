@@ -20,37 +20,37 @@ const formation = ({data}) => {
   </section>
   <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
     <div className="flex flex-col gap-5">
-      <h2 className="text-2xl font-black">Public cible</h2>
+      <h2 className="text-2xl font-black">{data.datoCmsListesFormation.titreUn}</h2>
       <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.publicCible }}/> 
 
     </div>
     <div className="flex flex-col gap-5">
-    <h2 className="text-2xl font-black">Condition d'accès</h2>
+    <h2 className="text-2xl font-black">{data.datoCmsListesFormation.titreDeux}</h2>
     <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.conditionDacces }}/> 
 
     </div>
   </section>
   <section className="flex flex-col gap-5">
-  <h2 className="text-2xl font-black">Objectifs communs à tous les cours de FLE</h2>
+  <h2 className="text-2xl font-black">{data.datoCmsListesFormation.titreTrois}</h2>
   <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.objectifCommunTousLesCoursDeFle }}/> 
 </section>
 <section className="flex flex-col gap-5">
-<h2 className="text-2xl font-black">Organisation</h2>
+<h2 className="text-2xl font-black">{data.datoCmsListesFormation.titreQuatre}</h2>
 <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.organisation }}/> 
-<h3 className="text-xl font-black">Niveaux :</h3>
+<h3 className="text-xl font-black">{data.datoCmsListesFormation.titreCinq}</h3>
 <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.niveaux }}/> 
 </section>
 
 <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
     <div className="flex flex-col gap-5">
-      <h2 className="text-2xl font-black">Quel est mon niveau ?</h2>
+      <h2 className="text-2xl font-black"></h2>
       <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.quelEstMonNiveau }}/> 
 
     </div>
     <div className="flex flex-col gap-5">
-    <h2 className="text-2xl font-black">Frais d'inscription</h2>
+    <h2 className="text-2xl font-black">{data.datoCmsListesFormation.titreSix}</h2>
     <div dangerouslySetInnerHTML={{ __html: data.datoCmsListesFormation.fraisDInscription }}/> 
-    <button className="bg-bleu-z p-2 rounded-xl text-white font-black w-max">S'inscrire</button>
+    <button className="bg-bleu-z p-2 rounded-xl text-white font-black w-max">{data.datoCmsListesFormation.titreSept}</button>
 
 
     </div>
@@ -79,6 +79,13 @@ export const query = graphql`
       publicCible
       quelEstMonNiveau
       slug
+      titreUn
+      titreDeux
+      titreTrois
+      titreQuatre
+      titreCinq
+      titreSix
+      titreSept
     }
 
 
