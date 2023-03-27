@@ -23,7 +23,7 @@ const activitePage = ({ data }) => (
       </article>
 
       <article className="w-10/12  m-auto" id="">
-        <h2 className="text-2xl font-black">Nos prochaines activités</h2>
+        <h2 className="text-2xl text-bleu-z font-black">Nos prochaines activités</h2>
       </article>
       <article className="w-10/12 m-auto flex flex-col md:grid md:grid-cols-2 gap-20">
         {data.allDatoCmsListesActivite.edges.map(({ node }) => {

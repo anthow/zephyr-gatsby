@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
       </article>
 
       <article className="w-10/12 m-auto flex flex-col items-center gap-10">
-        <h2 className="text-2xl font-black">Nos missions</h2>
+        <h2 className="text-2xl text-bleu-z font-black">Nos missions</h2>
         <section className="flex flex-col md:flex-row gap-20 justify-between">
           <div className="flex flex-col items-center gap-5">
             {/*}<figure>
@@ -83,7 +83,7 @@ const IndexPage = ({ data }) => (
         </section>
       </article>
       <article className="w-10/12 m-auto flex flex-col  gap-10">
-        <h2 className="text-2xl font-black">Nos Dernières actualités</h2>
+        <h2 className="text-2xl text-bleu-z font-black">Nos Dernières actualités</h2>
         <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
           {data.allDatoCmsActualite.edges.map(({ node }) => {
             return (

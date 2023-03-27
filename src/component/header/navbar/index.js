@@ -99,6 +99,7 @@ const Navbar = () => {
           width={100}
           quality={95}
           formats={["auto", "webp", "avif"]}
+          className="mr-2 md:mr-10"
         />
       </figure>
 

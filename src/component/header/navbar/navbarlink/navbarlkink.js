@@ -22,6 +22,7 @@ const NavbarLink = () => (
          <Link to="/asbl">  <li>L'ASBL</li></Link>
          <Link to="/formations"> <li>Les formations</li></Link>
          <Link to="/activites"> <li>Activités</li></Link>
+         <Link to="/temoignages"> <li>témoignages</li></Link>
          <Link to="/actu">  <li>Actualités</li></Link>
         <Link to="/contact"> <li>Contact</li></Link> 
         </ul>

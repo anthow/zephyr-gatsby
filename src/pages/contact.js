@@ -7,24 +7,23 @@ import { Link } from "gatsby";
 const ContactPage = ({ data }) => (
   <Layout>
     <main className=" w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
-      <h1 className="text-3xl text-center font-black"> Contact </h1>
-
+      <h1 className="text-3xl text-center text-bleu-z mt-10 font-black"> Contact </h1>
       <article className="flex flex-col gap-10 md:grid grid-cols-2">
         <section>
         <GatsbyImage image={data.datoCmsPageContact.imageFormulaireDeContact.gatsbyImageData} alt={data.datoCmsPageContact.imageFormulaireDeContact.alt} />
 
         </section>
         <section>
-            <form className="flex flex-col">
+            <form className="flex flex-col gap-2">
                 <label>Votre nom</label>
-                <input type="text" className="border-2" />
+                <input type="text" className="border-2 border-bleu-z" />
                 <label>Votre prénom</label>
-                <input type="text" className="border-2" />
+                <input type="text" className="border-2 border-bleu-z" />
                 <label>Votre adresse mail</label>
-                <input type="email" className="border-2" />
+                <input type="email" className="border-2 border-bleu-z" />
                 <label>Votre message</label>
-                <textarea className="border-2"/>
-                <input type="submit" className="border-2 w-max mt-5" value="Envoyer"/>
+                <textarea className="border-2 border-bleu-z"/>
+                <input type="submit" className="bg-orange-z p-2 rounded-xl text-white font-black rounded w-max mt-5" value="Envoyer"/>
             </form>
         </section>
         <section>

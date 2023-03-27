@@ -6,8 +6,8 @@ import { Link } from "gatsby";
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <main className=" w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
-      <h1 className="text-3xl text-center font-black">
+    <main className=" w-10/12 m-auto flex  flex-col gap-10 md:gap-20 mb-20">
+      <h1 className="text-3xl text-center mt-10 text-bleu-z font-black">
         {" "}
         Formulaire d'inscription
       </h1>

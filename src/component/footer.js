@@ -144,6 +144,7 @@ const Footer = () => (
                 </Link>
               </ul>
               <ul className="col-span-1 flex items-center flex-col">
+              <Link to="/temoignages"> <li>témoignages</li></Link>
                 <Link to="/contact">
                   {" "}
                   <li>Contact</li>

@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         
     <>
     <Header />
-        <main className=" w-12/12 flex flex-col sm:mt-10 md:mt-0  m-auto font-sans  ">{children}</main>
+        <main className=" w-12/12 flex flex-col sm:mt-22  md:mt-0  m-auto font-sans  ">{children}</main>
      
        <Footer/>
     </>
