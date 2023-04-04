@@ -21,7 +21,7 @@ const Footer = () => (
     `}
     render={(data) => (
       <>
-        <footer className="flex flex-col gap-20 pb-5">
+        <footer className="flex flex-col mt-20 gap-20 pb-5">
           <ul className="w-10/12 m-auto  flex flex-col md:flex-row flex-wrap items-center  gap-5">
             {data.datoCmsFooter.logoPartenaires.map((node) => (
               <li className=" place-self-center ">
