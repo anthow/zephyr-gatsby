@@ -31,15 +31,17 @@ const temoignagesPage = ({ data }) => (
             return (
               <div className="flex flex-col p-5 gap-10">
                 <div className="flex flex-row gap-10 justify-between items-center">
-                  <GatsbyImage
-                    className=""
-                    image={node.drapeau.gatsbyImageData}
-                    alt={node.drapeau.alt}
-                  />
+                
                   <ReactAudioPlayer src={node.enregistrement.url}  controls />
                 </div>
-
+                <div className="flex gap-5 items-center flex-row ">
+                <GatsbyImage
+            className=" "
+            image={node.drapeau.gatsbyImageData}
+            alt={node.drapeau.gatsbyImageData}
+          />
                 <p className="">{node.description}</p>
+                </div>
               </div>
             );
           })}
