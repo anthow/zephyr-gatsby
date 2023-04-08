@@ -1,78 +1,124 @@
-import * as React from "react";
+import React, { useRef } from 'react'
 import Layout from "../component/layout";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
-import { Link } from "gatsby";
+import { useForm } from 'react-hook-form'
+import { toPdf } from '@react-pdf/renderer'
+import { PDFViewer } from '@react-pdf/renderer'
+import html2canvas from 'html2canvas'
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const Form = () => { 
+  const { register, handleSubmit } = useForm()
+  const pdfRef = useRef(null)
+
+  
+  const onSubmit = async (data) => {
+    // Convertir le formulaire en PDF
+    const canvas = await html2canvas(pdfRef.current)
+    const dataUrl = canvas.toDataURL('image/jpeg', 1.0)
+    const pdf = await toPdf(dataUrl)
+
+    // Envoyer le PDF par e-mail
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'anthonyenglebert@gmail.com',
+        pass: 'jesuis6250'
+      }
+    })
+
+    const mailOptions = {
+      from: 'anthonyenglebert@gmail.com',
+      to: 'anthonyenglebert@gmail.com',
+      subject: 'Formulaire en PDF',
+      attachments: [
+        {
+          filename: 'formulaire.pdf',
+          content: pdf
+        }
+      ]
+    }
+
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(info)
+      }
+    })
+  }
+  
+  return (<Layout>
+
     <main className=" w-10/12 m-auto flex  flex-col gap-10 md:gap-20 mb-20">
       <h1 className="text-3xl text-center mt-10 text-bleu-z font-black">
         {" "}
         Formulaire d'inscription
       </h1>
       <article>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <div ref={pdfRef}>
           <section className="flex flex-col gap-5 md:gap-x-40  md:grid grid-cols-2">
             <div className="flex flex-col gap-2">
-              <label>Nom</label>
-              <input className="border" type="text" />
+              <label htmlFor="Nom" >Nom</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Prénom</label>
-              <input className="border" type="text" />
+              <label htmlFor="Prénom">Prénom</label>
+              <input className="border" ref={register({ required: true })}  type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Rue et N°</label>
-              <input className="border" type="text" />
+              <label htmlFor="Rue">Rue et N°</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Code postal</label>
-              <input className="border" type="text" />
+              <label htmlFor="Code postal">Code postal</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Ville</label>
-              <input className="border" type="text" />
+              <label htmlFor="Ville">Ville</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Téléphone/GSM</label>
-              <input className="border" type="text" />
+              <label htmlFor="Téléphone/GSM">Téléphone/GSM</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label>Mail</label>
-              <input className="border" type="text" />
+              <label htmlFor="Mail">Mail</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <span class="">Sexe</span>
+              <label htmlFor="Sexe"  class="">Sexe</label>
               <div>
-                <label class="inline-flex items-center">
+                <span class="inline-flex items-center">
                   <input
                     type="radio"
                     class="form-radio"
                     name="Sexe"
                     value="M"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">M</span>
-                </label>
-                <label class="inline-flex items-center ml-6">
+                </span>
+                <span class="inline-flex items-center ml-6">
                   <input
                     type="radio"
                     class="form-radio"
                     name="Sexe"
                     value="F"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">F</span>
-                </label>
+                </span>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label>Année de naissance</label>
-              <input className="border" type="number" />
+              <label htmlFor="Année de naissance">Année de naissance</label>
+              <input className="border" type="number" ref={register({ required: true })}/>
             </div>
             <div className="flex flex-col gap-2">
-              <label>type de carte d'identité</label>
-              <select name="carte ident" id="cardID">
+              <label htmlFor="type de carte d'identité">type de carte d'identité</label>
+              <select name="carte ident" ref={register({ required: true })} id="cardID">
                 <option value="">--Veuillez choisir une option--</option>
                 <option value="CI Belge">CI Belge</option>
                 <option value="A">A</option>
@@ -87,20 +133,20 @@ const IndexPage = ({ data }) => (
               </select>{" "}
             </div>
             <div className="flex flex-col gap-2">
-              <label>Votre carte d'identité expire le:</label>
-              <input className="border" type="date" />
+              <label htmlFor="Votre carte d'identité expire le">Votre carte d'identité expire le:</label>
+              <input className="border" ref={register({ required: true })} type="date" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>nationalité</label>
-              <input className="border" type="number" />
+              <label htmlFor="nationalité">nationalité</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Pays d'origine</label>
-              <input className="border" type="number" />
+              <label htmlFor="Pays d'origine">Pays d'origine</label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>statut</label>
-              <select name="statut" id="statut">
+              <label htmlFor="statut">statut</label>
+              <select name="statut" ref={register({ required: true })} id="statut">
                 <option value="">--Veuillez choisir une option--</option>
                 <option value="Sans revenu">Sans revenu</option>
                 <option value="CPAS">CPAS</option>
@@ -111,11 +157,11 @@ const IndexPage = ({ data }) => (
               </select>{" "}
             </div>
             <div className="flex flex-col gap-2">
-              <label> Numéro de Forem :</label>
-              <input className="border" type="number" />
+              <label htmlFor="Numéro de Forem"> Numéro de Forem :</label>
+              <input className="border" type="text" ref={register({ required: true })} />
             </div>
             <div className="flex flex-col gap-2">
-              <label> Attestation CPAS:</label>
+              <label htmlFor="Attestation CPAS:"> Attestation CPAS:</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -123,6 +169,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="attestation cpas"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -132,13 +179,14 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="attestation cpas"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label> Attestation Forem:</label>
+              <label htmlFor="Attestation Forem:"> Attestation Forem:</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -146,6 +194,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="attestation forem"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -155,18 +204,19 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="attestation forem"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label>Arrivé en Belgique le: </label>
-              <input className="border" type="date" />
+              <label htmlFor="Arrivé en Belgique le:">Arrivé en Belgique le: </label>
+              <input className="border" ref={register({ required: true })} type="date" />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Raison</label>
-              <select name="raison" id="raison">
+              <label htmlFor="Raison">Raison</label>
+              <select name="raison" id="raison" ref={register({ required: true })}>
                 <option value="">--Veuillez choisir une option--</option>
                 <option value="mariage">Mariage</option>
                 <option value="regroupement familial">
@@ -180,7 +230,7 @@ const IndexPage = ({ data }) => (
               </select>{" "}
             </div>
             <div className="flex flex-col gap-2">
-              <label>Mes objectifs</label>
+              <label htmlFor="Mes objectifs">Mes objectifs</label>
               <div className="flex gap-2 flex-wrap">
                 <div class="flex items-center">
                   <input
@@ -188,6 +238,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="sortir isolement"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="sortir isolement" class="ml-2 ">
                     Sortir de l'isolement
@@ -199,6 +250,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Devenir autonome"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="sortir isolement" class="ml-2 ">
                     Devenir autonome
@@ -210,6 +262,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Aider les enfants à l’école"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="sortir isolement" class="ml-2 ">
                     Aider les enfants à l’école
@@ -221,6 +274,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Participer à la vie sociale"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="sortir isolement" class="ml-2 ">
                     Participer à la vie sociale
@@ -232,6 +286,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Trouver un emploi"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="sortir isolement" class="ml-2 ">
                     Trouver un emploi
@@ -240,7 +295,7 @@ const IndexPage = ({ data }) => (
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label>je m'inscris au(x) </label>
+              <label htmlFor="je m'inscris au(x):">je m'inscris au(x): </label>
               <div className="flex gap-2 flex-wrap">
                 <div class="flex items-center">
                   <input
@@ -248,6 +303,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Cours de français"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="Cours de français" class="ml-2 ">
                     Cours de français
@@ -259,6 +315,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Table de conversation"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="Table de conversation" class="ml-2 ">
                     Table de conversation
@@ -270,6 +327,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Cours de citoyenneté"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="Cours de citoyenneté" class="ml-2 ">
                     Cours de citoyenneté
@@ -281,6 +339,7 @@ const IndexPage = ({ data }) => (
                     type="checkbox"
                     value="Ateliers socioculturels"
                     class=""
+                    ref={register({ required: true })}
                   />
                   <label for="Ateliers socioculturels" class="ml-2 ">
                     Ateliers socioculturels
@@ -289,7 +348,7 @@ const IndexPage = ({ data }) => (
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label> Mon niveau de français</label>
+              <label htmlFor="Mon niveau de français"> Mon niveau de français:</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -297,6 +356,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="niveau de français"
                     value="débutant"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Débutant</span>
                 </label>
@@ -306,6 +366,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="niveau de français"
                     value="A1"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">A1</span>
                 </label>
@@ -315,6 +376,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="niveau de français"
                     value="A2"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">A2</span>
                 </label>
@@ -324,13 +386,14 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="niveau de français"
                     value="B1"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">B1</span>
                 </label>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label> J'ai une équivalence de diplome:</label>
+              <label htmlFor="J'ai une équivalence de diplome:"> J'ai une équivalence de diplome:</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -338,6 +401,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="equivalence diplome"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -347,30 +411,31 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="equivalence diplome"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label> Dans mon pays j’ai travaillé comme :</label>
-              <input className="border" type="text" />
+              <label htmlFor="Dans mon pays j’ai travaillé comme :"> Dans mon pays j’ai travaillé comme :</label>
+              <input className="border" type="text" ref={register({ required: true })} />
             </div>
             <div className="flex flex-col gap-2">
-              <label> Je souhaite trouver un emploi en :</label>
-              <input className="border" type="text" />
+              <label htmlFor="Je souhaite trouver un emploi en :"> Je souhaite trouver un emploi en :</label>
+              <input className="border" type="text" ref={register({ required: true })} />
             </div>
             <div className="flex flex-col gap-2">
-              <label> Langue maternelle</label>
-              <input className="border" type="text" />
+              <label htmlFor="Langue maternelle"> Langue maternelle</label>
+              <input className="border" type="text" ref={register({ required: true })} />
             </div>
             <div className="flex flex-col gap-2">
-              <label> Autres langues parlées / écrites :</label>
-              <input className="border" type="text" />
+              <label htmlFor="Autres langues parlées / écrites :"> Autres langues parlées / écrites :</label>
+              <input className="border" type="text" ref={register({ required: true })} />
             </div>
             <div className="flex flex-col gap-2">
-              <label>Dernier diplôme *:  </label>
-              <select name="Dernier diplome" id="dernier diplome">
+              <label htmlFor="Dernier diplôme *: ">Dernier diplôme *:  </label>
+              <select name="Dernier diplome" ref={register({ required: true })} id="dernier diplome">
                 <option value="">--Veuillez choisir une option--</option>
                 <option value="Sans">Sans</option>
                 <option value="CEB" >
@@ -383,11 +448,11 @@ const IndexPage = ({ data }) => (
               </select>{" "}
             </div>
             <div className="flex flex-col gap-2">
-              <label>Diplomé en: </label>
-              <input className="border" type="date" />
+              <label htmlFor="Diplomé en:">Diplomé en: </label>
+              <input className="border" ref={register({ required: true })} type="text" />
             </div>
             <div className="flex flex-col gap-2">
-              <label> Je sais lire et écrire dans ma langue :*</label>
+              <label htmlFor="Je sais lire et écrire dans ma langue :"> Je sais lire et écrire dans ma langue :*</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -395,6 +460,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="Je sais lire et écrire dans ma langue :*"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -404,13 +470,14 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="Je sais lire et écrire dans ma langue :*"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
               </div>            </div>
               <div className="flex flex-col gap-2">
-              <label>Envoyé par  </label>
-              <select name="Envoyé par " id="Envoyé par ">
+              <label htmlFor="Envoyé par">Envoyé par  </label>
+              <select name="Envoyé par " ref={register({ required: true })} id="Envoyé par ">
                 <option value="">--Veuillez choisir une option--</option>
                 <option value="Cripel">Cripel</option>
                 <option value="Forem" >
@@ -421,7 +488,7 @@ const IndexPage = ({ data }) => (
               </select>{" "}
             </div>
             <div className="flex flex-col gap-2">
-              <label>Accorde à l’A.S.B.L. Zéphyr à utiliser les photographies et le support audiovisuel fixant mon image et mes propos, dans le cadre de la présentation des activités générales de l’A.S.B.L. Zéphyr.</label>
+              <label htmlFor="Accord à l’A.S.B.L.">Accorde à l’A.S.B.L. Zéphyr à utiliser les photographies et le support audiovisuel fixant mon image et mes propos, dans le cadre de la présentation des activités générales de l’A.S.B.L. Zéphyr.</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -429,6 +496,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="Utilisation image"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -438,13 +506,14 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="Utilisation image"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label> Accepte que l’asbl Zéphyr traite mes données</label>
+              <label htmlFor="Accepte que l’asbl Zéphyr traite mes données"> Accepte que l’asbl Zéphyr traite mes données</label>
               <div>
                 <label class="inline-flex items-center">
                   <input
@@ -452,6 +521,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="données"
                     value="Oui"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Oui</span>
                 </label>
@@ -461,6 +531,7 @@ const IndexPage = ({ data }) => (
                     class="form-radio"
                     name="données"
                     value="Non"
+                    ref={register({ required: true })}
                   />
                   <span class="ml-2">Non</span>
                 </label>
@@ -470,14 +541,18 @@ Elles ne seront jamais transmises à d'autres associations ou services.
 Elles sont conservées 2 ans après la fin de votre formation.</p> 
             </div>
           </section>
+          </div>
           <button className="bg-orange-z rounded-xl px-4 mt-10 p-2 text-white" type="submit">Envoyer</button>
-
+          <PDFViewer style={{ width: '100%', height: 400 }}>
+        <Document file={pdf}>
+          <Page pageNumber={1} />
+        </Document>
+      </PDFViewer>
         </form>
       </article>
     </main>
   </Layout>
 );
+}
+export default Form;
 
-export default IndexPage;
-
-export const Head = () => <title>page d'accueil</title>;

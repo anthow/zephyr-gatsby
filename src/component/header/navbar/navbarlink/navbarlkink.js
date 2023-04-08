@@ -27,7 +27,7 @@ const NavbarLink = () => (
         <Link to="/contact"> <li>Contact</li></Link> 
         </ul>
         <ul className="flex gap-5 flex-col md:flex-row items-center">
-        <Link to="/inscription">  <li ><button className="bg-bleu-z text-white font-black rounded-xl p-2 ">S'inscrire</button></li></Link>
+        <a href="https://tally.so/r/3XLykV" target="_blank"> <li ><button className="bg-bleu-z text-white font-black rounded-xl p-2 ">S'inscrire</button></li></a>
           <li ><button className="bg-orange-z rounded-xl p-2 text-white">Formation</button></li>
         </ul>
         <ul className="flex  gap-5">
