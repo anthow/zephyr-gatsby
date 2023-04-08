@@ -41,9 +41,9 @@ const formationPage =  ({ data }) => (
 
 		</div>
 		<div className="flex flex-col md:flex-row gap-5">
-    <Link to="/inscription"> <button className="bg-bleu-z p-2 rounded-xl text-white font-black"> S'incrire</button></Link>
+    <a href="https://tally.so/r/3XLykV" target="_blank"> <button className="bg-bleu-z p-2 rounded-xl text-white font-black"> S'incrire</button></a>
                 <Link to={node.slug}><button className="bg-orange-z p-2 rounded-xl text-white font-black"> En savoir plus </button></Link>
-    
+
 		</div>
 		</section>
     </article>
