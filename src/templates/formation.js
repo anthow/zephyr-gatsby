@@ -105,8 +105,8 @@ const formation = ({ data }) => {
 };
 
 export const query = graphql`
-  query formationQuery($url: String) {
-    datoCmsListesFormation(slug: { eq: $url }) {
+  query formationQuery($slug: String) {
+    datoCmsListesFormation(slug: { eq: $slug }) {
       conclusion
       conditionDacces
       fraisDInscription

@@ -28,8 +28,8 @@ const blogPost = ({data}) => {
   )
 }
 export const query = graphql`
-query BlogQuery($url: String) {
-	datoCmsActualite(slug: { eq: $url }) {
+query BlogQuery($slug: String) {
+	datoCmsActualite(slug: { eq: $slug }) {
 		date(formatString: "  dddd d MMMM YYYY", locale: "fr")
 		imageDeLArticle {
 		  alt
