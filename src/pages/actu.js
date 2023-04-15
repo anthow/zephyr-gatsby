@@ -1,27 +1,32 @@
-import * as React from "react"
-import Layout from "../component/layout"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import * as React from "react";
+import Layout from "../component/layout";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { Link } from "gatsby";
+import Seo from "../component/seo";
 
-const IndexPage = ({ data }) => (
-
-    <Layout>
-  <main className="flex mt-10 flex-col gap-10 md:gap-20 mb-20">
-	<article className=" m-auto flex flex-col  gap-10">
-	<h2 className="text-2xl text-bleu-z font-black">Nos Dernières actualités</h2>
-		<section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
-		{data.allDatoCmsActualite.edges.map(({ node }) => {
-						
-          return <Link to={node.slug}>
-			      <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
+const ActuPage = ({ data }) => (
+  <Layout>
+    <Seo
+      title="Actualité - Zephyr"
+      description="L'actualité de l'ASBL Zephyr - Visé"
+    />
+    <main className="flex mt-10 flex-col gap-10 md:gap-20 mb-20">
+      <article className=" m-auto flex flex-col  gap-10">
+        <h2 className="text-2xl text-bleu-z font-black">
+          Nos Dernières actualités
+        </h2>
+        <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
+          {data.allDatoCmsActualite.edges.map(({ node }) => {
+            return (
+              <Link to={node.slug}>
+                <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
                     <div className="flex flex-col  text-center">
-                    <p className="bg-orange-z p-2">{node.meta.createdAt}</p>
+                      <p className="bg-orange-z p-2">{node.meta.createdAt}</p>
                       <div className="bg-orange-z/80 py-5 px-5 flex flex-col">
-                      <p>{node.meta.publishedAt}</p>
-
+                        <p>{node.meta.publishedAt}</p>
                       </div>
                     </div>
                   </div>
@@ -33,43 +38,39 @@ const IndexPage = ({ data }) => (
                   </figure>
                   <p className="italic">{node.catGorie.nomDeLaCategorie}</p>
                 </div>
-			</Link>
-			        })}
+              </Link>
+            );
+          })}
+        </section>
+      </article>
+    </main>
+  </Layout>
+);
 
-		</section>
-	</article>
-</main>
-</Layout>
-  )
-
-  export const query = graphql`
+export const query = graphql`
   query {
-    allDatoCmsActualite (sort: {date: DESC},) {
+    allDatoCmsActualite(sort: { date: DESC }) {
       edges {
         node {
-			slug
+          slug
           date
-		  catGorie {
-			nomDeLaCategorie
-		  }
-		  meta {
-			createdAt(formatString: "MMM YYYY", locale: "fr")
-			publishedAt(formatString: "ddd d", locale: "fr")
-		  }
+          catGorie {
+            nomDeLaCategorie
+          }
+          meta {
+            createdAt(formatString: "MMM YYYY", locale: "fr")
+            publishedAt(formatString: "ddd d", locale: "fr")
+          }
           nomDeLArticle
           texteDeLArticle
           imageDeLArticle {
             alt
-            gatsbyImageData (width: 250, height: 170)
+            gatsbyImageData(width: 250, height: 170)
           }
         }
       }
     }
   }
-`
+`;
 
-export default IndexPage
-
-export const Head = () => <title>page d'accueil</title>
-
-
+export default ActuPage;

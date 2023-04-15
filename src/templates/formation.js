@@ -2,10 +2,16 @@ import * as React from "react";
 import Layout from "../component/layout";
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import Seo from "../component/seo";
 
 const formation = ({ data }) => {
   return (
     <Layout>
+       <Seo
+        title={data.datoCmsListesFormation.seo.title}
+        description={data.datoCmsListesFormation.seo.description}
+        image={data.datoCmsListesFormation.seo.image.gatsbyImageData}
+      />
       <main className="flex flex-col gap-20 mb-20">
         <GatsbyImage
           className=" m-auto max-w-full"
@@ -93,9 +99,11 @@ const formation = ({ data }) => {
                   __html: data.datoCmsListesFormation.fraisDInscription,
                 }}
               />
-              <button className="bg-bleu-z p-2 rounded-xl text-white font-black w-max">
-                {data.datoCmsListesFormation.titreSept}
+               <a href="https://tally.so/r/3XLykV" target="_blank">
+              <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+                S'inscrire
               </button>
+            </a>
             </div>
           </section>
         </article>
@@ -107,6 +115,13 @@ const formation = ({ data }) => {
 export const query = graphql`
   query formationQuery($slug: String) {
     datoCmsListesFormation(slug: { eq: $slug }) {
+      seo {
+        description
+        title
+        image {
+          gatsbyImageData
+        }
+      }
       conclusion
       conditionDacces
       fraisDInscription

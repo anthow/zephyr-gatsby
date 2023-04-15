@@ -3,9 +3,16 @@ import Layout from "../component/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
+import Seo from "../component/seo";
 
 const IndexPage = ({ data }) => (
   <Layout>
+     <Seo
+        title={data.datoCmsPageDAccueil.seo.title}
+        description={data.datoCmsPageDAccueil.seo.description}
+        image={data.datoCmsPageDAccueil.seo.image.gatsbyImageData}
+      />
+    
     <main className="flex flex-col gap-10 md:gap-20 mb-20">
       <article className="w-12/12 p-10 h-1/2" id="image-accueil">
         <section className="bg-white/70 flex flex-col gap-10 p-5 rounded-xl md:w-1/3">
@@ -119,8 +126,14 @@ const IndexPage = ({ data }) => (
 export const query = graphql`
   query {
     datoCmsPageDAccueil
-    
     {
+      seo {
+        description
+        title
+        image {
+          gatsbyImageData
+        }
+      }
       texteAccroche
       texteMission1
       texteMission2

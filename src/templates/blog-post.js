@@ -2,11 +2,17 @@ import * as React from "react"
 import Layout from "../component/layout"
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import Seo from "../component/seo";
 
 const blogPost = ({data}) => {
   return (
     <Layout>
-  <main className="flex flex-col gap-20 mb-20">
+		 <Seo
+        title={data.datoCmsActualite.seo.title}
+        description={data.datoCmsActualite.seo.description}
+        image={data.datoCmsActualite.seo.image.gatsbyImageData}
+      />
+  <div className="flex flex-col gap-20 mb-20">
   <GatsbyImage
             className=" m-auto max-w-full"
             image={data.datoCmsActualite.imageDeLArticle.gatsbyImageData}
@@ -22,7 +28,7 @@ const blogPost = ({data}) => {
 
 			</article>
 
-</main>
+</div>
 
 </Layout>
   )
@@ -30,6 +36,13 @@ const blogPost = ({data}) => {
 export const query = graphql`
 query BlogQuery($slug: String) {
 	datoCmsActualite(slug: { eq: $slug }) {
+		seo {
+			description
+			title
+			image {
+			  gatsbyImageData
+			}
+		  }
 		date(formatString: "  dddd d MMMM YYYY", locale: "fr")
 		imageDeLArticle {
 		  alt

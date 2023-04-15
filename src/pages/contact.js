@@ -3,9 +3,12 @@ import Layout from "../component/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
+import Seo from "../component/seo"
+
 
 const ContactPage = ({ data }) => (
   <Layout>
+      <Seo title={data.datoCmsPageContact.seo.title } description={data.datoCmsPageContact.seo.description} image={data.datoCmsPageContact.seo.image.gatsbyImageData} />
     <main className=" w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
       <h1 className="text-3xl text-center text-bleu-z mt-10 font-black"> Contact </h1>
       <article className="flex flex-col gap-10 md:grid grid-cols-2">
@@ -57,6 +60,13 @@ const ContactPage = ({ data }) => (
 export const query = graphql`
   query {
     datoCmsPageContact {
+      seo {
+        description
+        title
+        image {
+          gatsbyImageData
+        }
+      }
       adresse
       imageFormulaireDeContact {
         alt
@@ -80,4 +90,3 @@ export const query = graphql`
 
 export default ContactPage;
 
-export const Head = () => <title>page d'accueil</title>;

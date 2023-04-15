@@ -3,9 +3,16 @@ import Layout from "../component/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import ReactAudioPlayer from "react-audio-player";
+import Seo from "../component/seo";
 
 const temoignagesPage = ({ data }) => (
   <Layout>
+     <Seo
+        title={data.datoCmsPageTemoignage.seo.title}
+        description={data.datoCmsPageTemoignage.seo.description}
+        image={data.datoCmsPageTemoignage.seo.image.gatsbyImageData}
+      />
+    
     <div className="flex flex-col gap-10 md:gap-20">
       <article className="w-12/12 h-1/2">
         <figure>
@@ -69,6 +76,13 @@ export const query = graphql`
       }
     }
     datoCmsPageTemoignage {
+      seo {
+        description
+        title
+        image {
+          gatsbyImageData
+        }
+      }
       imageTMoignage {
         alt
         gatsbyImageData
@@ -81,4 +95,3 @@ export const query = graphql`
 
 export default temoignagesPage;
 
-export const Head = () => <title>page d'accueil</title>;

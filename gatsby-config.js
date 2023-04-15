@@ -3,7 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `zephyr-gatsby`,
+    title: `zephyr ASBL - Visé`,
+    description: `Site internet de l'ASBL Zephyr à Visé`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: ["gatsby-plugin-image", `gatsby-plugin-styled-components`, "gatsby-plugin-sitemap",
