@@ -5,7 +5,13 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Seo from "../component/seo";
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
+  const bgimage = {
+    backgroundSize: 'cover',
+    backgroundImage:
+      "url(" + data.datoCmsPageDAccueil.imageAccroche.fluid.src + ")",
+  }
+return(
   <Layout>
      <Seo
         title={data.datoCmsPageDAccueil.seo.title}
@@ -14,7 +20,7 @@ const IndexPage = ({ data }) => (
       />
     
     <main className="flex flex-col gap-10 md:gap-20 mb-20">
-      <article className="w-12/12 p-10 h-1/2" id="image-accueil">
+      <article className="w-12/12 p-10 h-1/2" style={bgimage}>
         <section className="bg-white/70 flex flex-col gap-10 p-5 rounded-xl md:w-1/3">
           <h1 className="text-3xl text-bleu-z font-black">
             {data.datoCmsPageDAccueil.titreAccroche}
@@ -120,8 +126,8 @@ const IndexPage = ({ data }) => (
         </section>
       </article>
     </main>
-  </Layout>
-);
+  </Layout>)
+};
 
 export const query = graphql`
   query {
@@ -154,6 +160,13 @@ export const query = graphql`
         gatsbyImageData
         alt
       }
+imageAccroche
+{
+  fluid{
+    src
+  }
+  alt
+}
     }
     allDatoCmsActualite(limit: 6) {
       edges {
