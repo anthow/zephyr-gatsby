@@ -50,7 +50,6 @@ const formation = ({ data }) => {
                 }}
               />
             </div>
-          </section>
           <section className="flex flex-col gap-5">
             <h2 className="text-2xl text-bleu-z font-black">
               {data.datoCmsListesFormation.titreTrois}
@@ -81,9 +80,8 @@ const formation = ({ data }) => {
             />
           </section>
 
-          <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black"></h2>
+              <h2 className="text-2xl text-bleu-z  font-black">{data.datoCmsListesFormation.titreSix}</h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.datoCmsListesFormation.quelEstMonNiveau,
@@ -92,7 +90,7 @@ const formation = ({ data }) => {
             </div>
             <div className="flex flex-col gap-5">
               <h2 className="text-2xl text-bleu-z  font-black">
-                {data.datoCmsListesFormation.titreSix}
+                {data.datoCmsListesFormation.titreSept}
               </h2>
               <div
                 dangerouslySetInnerHTML={{

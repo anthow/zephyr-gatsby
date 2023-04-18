@@ -17,12 +17,23 @@ const Footer = () => (
           facebook
           whatsapp
         }
+        datoCmsMenu {
+          texteAccueil
+          texteActivit
+          texteActualit
+          texteAsbl
+          texteBoutonFormation
+          texteBoutonSInscrire
+          texteContact
+          texteFormation
+          texteTMoignages
+        }
       }
     `}
     render={(data) => (
       <>
-        <footer className="flex flex-col mt-20 gap-20 pb-5">
-          <ul className="w-10/12 m-auto  flex flex-col md:flex-row flex-wrap items-center  gap-5">
+        <footer className="flex flex-col mt-20  gap-20 pb-5">
+          <ul className="w-10/12 m-auto   flex flex-col md:flex-row flex-wrap justify-center justify-items-stretch items-center  gap-5">
             {data.datoCmsFooter.logoPartenaires.map((node) => (
               <li className=" place-self-center ">
                 {/*}<a href={node.customData.url} rel="noreferrer" target="_blank" >{*/}
@@ -124,34 +135,37 @@ const Footer = () => (
               </div>
               <ul className="col-span-1 flex items-center  flex-col">
                 <Link to="/">
-                  <li>Accueil</li>
+                  <li>{data.datoCmsMenu.texteAccueil}</li>
                 </Link>
                 <Link to="/asbl">
                   {" "}
-                  <li>ASBL</li>
+                  <li>{data.datoCmsMenu.texteAsbl}</li>
                 </Link>
                 <Link to="/formations">
                   {" "}
-                  <li>Formations</li>
+                  <li>{data.datoCmsMenu.texteFormation}</li>
                 </Link>
                 <Link to="/activites">
                   {" "}
-                  <li>Activités</li>
+                  <li>{data.datoCmsMenu.texteActivit}</li>
                 </Link>
                 <Link to="/inscription">
                   {" "}
-                  <li>Inscription</li>
+                  <li>{data.datoCmsMenu.texteBoutonSInscrire}   </li>
                 </Link>
               </ul>
               <ul className="col-span-1 flex items-center flex-col">
-              <Link to="/temoignages"> <li>témoignages</li></Link>
+                <Link to="/temoignages">
+                  {" "}
+                  <li>{data.datoCmsMenu.texteTMoignages}</li>
+                </Link>
                 <Link to="/contact">
                   {" "}
-                  <li>Contact</li>
+                  <li>{data.datoCmsMenu.texteContact}</li>
                 </Link>
                 <Link to="/actu">
                   {" "}
-                  <li>Actualités</li>
+                  <li>{data.datoCmsMenu.texteActualit}</li>
                 </Link>
                 <li>Politique de confidentialité</li>
               </ul>

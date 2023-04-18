@@ -109,7 +109,8 @@ export const query = graphql`
         gatsbyImageData
       }
     }
-    allDatoCmsListeEquipe {
+    allDatoCmsListeEquipe(sort: {ordre: ASC}) {
+      
       edges {
         node {
           adresseMail

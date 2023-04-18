@@ -17,16 +17,21 @@ const ContactPage = ({ data }) => (
 
         </section>
         <section>
-            <form className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2"
+             action="https://formspree.io/f/xrgvrzwp"
+             method="POST"                                      
+            >
                 <label>Votre nom</label>
-                <input type="text" className="border-2 border-bleu-z" />
+                <input type="text" name="Nom" required className="border-2 border-bleu-z" />
                 <label>Votre prénom</label>
-                <input type="text" className="border-2 border-bleu-z" />
+                <input type="text" name="Prénom" required className="border-2 border-bleu-z" />
                 <label>Votre adresse mail</label>
-                <input type="email" className="border-2 border-bleu-z" />
+                <input type="email" name="mail" required className="border-2 border-bleu-z" />
                 <label>Votre message</label>
-                <textarea className="border-2 border-bleu-z"/>
-                <input type="submit" className="bg-orange-z p-2 rounded-xl text-white font-black rounded w-max mt-5" value="Envoyer"/>
+                <textarea className="border-2 w-full border-bleu-z " required rows="10"/>
+                <button className="bg-orange-z p-2 rounded-xl text-white font-black rounded w-max mt-5" value="Envoyer">
+                Envoyer 
+                </button>
             </form>
         </section>
         <section>
