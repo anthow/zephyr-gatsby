@@ -498,6 +498,7 @@ Elles sont conservées 2 ans après la fin de votre formation.</p>
             </div>
           </section>
           </div>
+          <input type="hidden" name="inscription" value="inscription"></input>
           <button className="bg-orange-z rounded-xl px-4 mt-10 p-2 text-white" type="submit">Envoyer</button>
         </form>
       </article>
