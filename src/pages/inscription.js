@@ -11,19 +11,27 @@ const Form = () => {
         Formulaire d'inscription
       </h1>
       <article>
-        <form name="inscription" method="POST" data-netlify="true">
-        <div>
-          <section className="flex flex-col gap-5 md:gap-x-40  md:grid grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="Nom" >Nom</label>
-              <input className="border"  type="text" />
-            </div>
-            
-          </section>
-          </div>
-          <input type="hidden" name="inscription" value="inscription"></input>
-          <button className="bg-orange-z rounded-xl px-4 mt-10 p-2 text-white" type="submit">Envoyer</button>
-        </form>
+      <form name="inscription" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
       </article>
     </main>
   </Layout>
