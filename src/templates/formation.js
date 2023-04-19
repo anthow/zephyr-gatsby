@@ -97,13 +97,26 @@ const formation = ({ data }) => {
                   __html: data.datoCmsListesFormation.fraisDInscription,
                 }}
               />
-               <a href="https://tally.so/r/3XLykV" target="_blank">
-              <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
-                S'inscrire
-              </button>
-            </a>
-            </div>
+              </div>
+             
+         
           </section>
+          <section className="flex gap-5 flex-col items-center w-10/12 m-auto">
+
+<h2 className="text-2xl text-bleu-z  font-black">
+  {data.datoCmsListesFormation.titreHuit}
+</h2>
+<div
+  dangerouslySetInnerHTML={{
+    __html: data.datoCmsListesFormation.conclusion,
+  }} className="text-center"
+/>
+      <a href="https://tally.so/r/3XLykV" target="_blank">
+<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+  S'inscrire
+</button>
+</a>
+</section>
         </article>
       </main>
     </Layout>
@@ -141,6 +154,7 @@ export const query = graphql`
       titreCinq
       titreSix
       titreSept
+      titreHuit
     }
   }
 `;
