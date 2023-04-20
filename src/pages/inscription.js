@@ -16,7 +16,7 @@ const Form = () => {
           <section className="flex flex-col gap-5 md:gap-x-40  md:grid grid-cols-2">
             <div className="flex flex-col gap-2">
               <label name="Nom" htmlFor="Nom" >Nom
-              <input className="border" name=""  type="text" />
+              <input className="border" name="Nom"  type="text" />
               </label>
             </div>
             <div className="flex flex-col gap-2">
