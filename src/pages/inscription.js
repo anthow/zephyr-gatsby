@@ -11,8 +11,9 @@ const Form = () => {
         Formulaire d'inscription
       </h1>
       <article>
-      <form name="inscription" method="POST" action="/" netlify="true">
-  <p>
+      <form name="inscription" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="inscription" />
+          <p>
     <label>Your Name: <input type="text" name="name" /></label>
      <input type="hidden" name="form-name" value="contactForm" /> 
   </p>
