@@ -15,6 +15,7 @@ const Form = () => {
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            action="validation-inscription"
           >
             <input type="hidden" name="form-name" value="inscription" />{" "}
             <div>
@@ -624,7 +625,6 @@ const Form = () => {
                 </div>
               </section>
             </div>
-            <input type="hidden" name="inscription" value="inscription"></input>
             <button
               className="bg-orange-z rounded-xl px-4 mt-10 p-2 text-white"
               type="submit"
