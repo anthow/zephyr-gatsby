@@ -16,6 +16,7 @@ const Form = () => {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             action="validation-inscription"
+            data-netlify-recaptcha="true"
           >
             <input type="hidden" name="form-name" value="inscription" />{" "}
             <div>

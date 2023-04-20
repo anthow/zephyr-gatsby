@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../component/layout";
 import Seo from "../component/seo";
+import { StaticImage } from "gatsby-plugin-image";
+
 const activitePage = ({ data }) => (
   <>
     {/*}<Seo
@@ -12,8 +14,26 @@ const activitePage = ({ data }) => (
     />
 {*/}
     <Layout>
-      <main className="flex flex-col  gap-10  mb-20">
-       votre inscription a bien été prise en compte, nous vous recontacterons le plus rapidement possible 
+      <main className="flex flex-col m-auto w-10/12 md:w-6/12   gap-10 items-center my-20">
+        <StaticImage
+          src="https://res.cloudinary.com/liono/image/upload/v1673538982/Z%C3%A9phyr/logo_zephyr_itor5r.png"
+          alt="Logo Zéphyr"
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          className="mr-2 md:mr-10 h-max w-1/2 md:w-1/4"
+        />
+        <article className=" flex flex-col items-center gap-10 p-10 rounded border border-bleu-z">
+          <h1 className="text-xl text-bleu-z font-black">
+            {data.datoCmsValidationFormulaireDInscription.titreDeLaValidation}
+          </h1>
+          <div
+            className="flex flex-col gap-5"
+            dangerouslySetInnerHTML={{
+              __html: data.datoCmsValidationFormulaireDInscription.texteDeLaValidation,
+            }}
+          />
+        
+        </article>
       </main>
     </Layout>
   </>
@@ -21,35 +41,9 @@ const activitePage = ({ data }) => (
 
 export const query = graphql`
   query {
-    allDatoCmsListesActivite {
-      edges {
-        node {
-          dateEtHeure(formatString: "dddd Do MMMM YY à h:mm  ", locale: "fr")
-          description
-          imageActivit {
-            alt
-            gatsbyImageData(width: 250, height: 250)
-          }
-          mailInscription
-          nomDeLActivit
-          smsInscription
-        }
-      }
-    }
-    datoCmsPageActivite {
-      seo {
-        description
-        title
-        image {
-          gatsbyImageData
-        }
-      }
-      textePage
-      titrePage
-      imagePage {
-        alt
-        gatsbyImageData
-      }
+    datoCmsValidationFormulaireDInscription {
+      texteDeLaValidation
+      titreDeLaValidation
     }
   }
 `;
