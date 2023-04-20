@@ -134,8 +134,8 @@ const Form = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="nationalité">nationalité</label>
-                  <input className="border" type="text" />
+                  <label name="nationalité" htmlFor="nationalité">nationalité</label>
+                  <input className="border" name="nationalité" type="text" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label name="Pays d'origine" htmlFor="Pays d'origine">
@@ -322,7 +322,7 @@ const Form = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="je m'inscris" htmlFor="je m'inscris au(x):">
+                  <label name="je m'inscris aux" htmlFor="je m'inscris au(x):">
                     je m'inscris au(x):{" "}
                   </label>
                   <div className="flex gap-2 flex-wrap">
@@ -332,7 +332,7 @@ const Form = () => {
                         type="checkbox"
                         value="Cours de français"
                         class=""
-                        name="je m'inscris"
+                        name="je m'inscris aux"
                       />
                       <label for="Cours de français" class="ml-2 ">
                         Cours de français
@@ -485,7 +485,7 @@ const Form = () => {
                     {" "}
                     Langue maternelle
                   </label>
-                  <input className="border" type="text" />
+                  <input className="border" name="Langue maternelle" type="text" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
