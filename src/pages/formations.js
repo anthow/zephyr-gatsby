@@ -59,14 +59,13 @@ const formationPage = ({ data }) => (
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-5">
-                  <a href="https://tally.so/r/3XLykV" target="_blank">
-                    {" "}
-                    <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
-                      {" "}
-                      S'incrire
-                    </button>
-                  </a>
-                  <Link to={node.slug}>
+                <Link to="/inscription">
+<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+
+{data.datoCmsMenu.texteBoutonSInscrire}
+
+</button>
+</Link>                  <Link to={node.slug}>
                     <button className="bg-orange-z p-2 rounded-xl text-white font-black">
                       {" "}
                       En savoir plus{" "}
@@ -103,7 +102,7 @@ const formationPage = ({ data }) => (
                     {" "}
                     <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
                       {" "}
-                      S'incrire
+                      {data.datoCmsMenu.texteBoutonSInscrire}
                     </button>
                   </Link>
                   <Link to={node.slug}>
@@ -123,7 +122,12 @@ const formationPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  query 
+    { datoCmsMenu {
+   
+      texteBoutonSInscrire
+    
+    }
     allDatoCmsListesFormation {
       edges {
         node {

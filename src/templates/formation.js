@@ -3,6 +3,8 @@ import Layout from "../component/layout";
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Seo from "../component/seo";
+import { Link } from "gatsby";
+
 
 const formation = ({ data }) => {
   return (
@@ -23,11 +25,13 @@ const formation = ({ data }) => {
             <h1 className="text-center text-orange-z text-3xl font-black">
               {data.datoCmsListesFormation.nomDeLaFormation}
             </h1>
-            <a href="https://tally.so/r/3XLykV" target="_blank">
-              <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
-                S'inscrire
-              </button>
-            </a>
+            <Link to="/inscription">
+<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+
+{data.datoCmsMenu.texteBoutonSInscrire}
+
+</button>
+</Link>
           </section>
           <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
             <div className="flex flex-col gap-5">
@@ -111,11 +115,13 @@ const formation = ({ data }) => {
     __html: data.datoCmsListesFormation.conclusion,
   }} className="text-center"
 />
-      <a href="https://tally.so/r/3XLykV" target="_blank">
+<Link to="/inscription">
 <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
-  S'inscrire
+
+{data.datoCmsMenu.texteBoutonSInscrire}
+
 </button>
-</a>
+</Link>
 </section>
         </article>
       </main>
@@ -125,6 +131,7 @@ const formation = ({ data }) => {
 
 export const query = graphql`
   query formationQuery($slug: String) {
+    
     datoCmsListesFormation(slug: { eq: $slug }) {
       seo {
         description
@@ -155,6 +162,11 @@ export const query = graphql`
       titreSix
       titreSept
       titreHuit
+    }
+    datoCmsMenu {
+   
+      texteBoutonSInscrire
+    
     }
   }
 `;

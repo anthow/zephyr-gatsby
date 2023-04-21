@@ -59,14 +59,16 @@ const NavbarLink = () => (
           </Link>
         </ul>
         <ul className="flex gap-5 flex-col md:flex-row items-center">
-          <a href="https://tally.so/r/3XLykV" target="_blank">
             {" "}
             <li>
+            <Link to="/inscription">
               <button className="bg-bleu-z text-white font-black rounded-xl p-2 ">
               {data.datoCmsMenu.texteBoutonSInscrire}              
               </button>
+              </Link>
+              
             </li>
-          </a>
+
           <li>
             <button className="bg-orange-z rounded-xl p-2 text-white">
             {data.datoCmsMenu.texteBoutonFormation}

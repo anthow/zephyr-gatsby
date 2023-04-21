@@ -30,10 +30,11 @@ return(
               __html: data.datoCmsPageDAccueil.texteAccroche,
             }}
           />
-
+<Link to="/inscription">
           <button className="bg-orange-z opacity-100                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           px-4 py-2 rounded-lg text-white font-bold hover:bg-gray-500 w-max">
-            s'inscrire
+            {data.datoCmsMenu.texteBoutonSInscrire}
           </button>
+          </Link>
         </section>
       </article>
 
@@ -130,7 +131,13 @@ return(
 };
 
 export const query = graphql`
-  query {
+  query { 
+    datoCmsMenu {
+   
+    texteBoutonSInscrire
+  
+  }
+
     datoCmsPageDAccueil
     {
       seo {
