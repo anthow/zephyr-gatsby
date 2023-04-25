@@ -12,13 +12,13 @@ const blogPost = ({data}) => {
         description={data.datoCmsActualite.seo.description}
         image={data.datoCmsActualite.seo.image.gatsbyImageData}
       />
-  <div className="flex flex-col gap-20 mb-20">
+  <div className="flex flex-col gap-10 mb-20">
   <GatsbyImage
             className=" m-auto max-w-full"
             image={data.datoCmsActualite.imageDeLArticle.gatsbyImageData}
             alt={data.datoCmsActualite.imageDeLArticle.alt}
           />
-		<article className="flex flex-col gap-20 w-10/12 m-auto">
+		<article className="flex flex-col gap-10 w-10/12 m-auto">
 		<section className="flex flex-col gap-2">
 			<h1 className=" text-3xl text-bleu-z font-black">{data.datoCmsActualite.nomDeLArticle}</h1>
 			<p className="italic">le {data.datoCmsActualite.date}</p>
