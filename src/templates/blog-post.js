@@ -46,7 +46,7 @@ query BlogQuery($slug: String) {
 		date(formatString: "  dddd d MMMM YYYY", locale: "fr")
 		imageDeLArticle {
 		  alt
-		  gatsbyImageData (height:400, width:1400)
+		  gatsbyImageData(aspectRatio: 1.5, height:400)
 		}
 		nomDeLArticle
 		slug

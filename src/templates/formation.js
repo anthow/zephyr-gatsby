@@ -144,7 +144,7 @@ export const query = graphql`
       conditionDacces
       fraisDInscription
       imageFormation {
-        gatsbyImageData(height: 400, width: 1400)
+        gatsbyImageData(aspectRatio: 3, height:400)
         alt
       }
       niveaux

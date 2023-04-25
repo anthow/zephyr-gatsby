@@ -11,7 +11,7 @@ const ActuPage = ({ data }) => (
       title="Actualité - Zephyr"
       description="L'actualité de l'ASBL Zephyr - Visé"
     />
-    <main className="flex mt-10 flex-col gap-10 md:gap-20 mb-20">
+    <main className="w-10/12 m-auto flex mt-10 flex-col gap-10 md:gap-20 mb-20">
       <article className=" m-auto flex flex-col  gap-10">
         <h2 className="text-2xl text-bleu-z font-black">
           Nos Dernières actualités
