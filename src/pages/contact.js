@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Seo from "../component/seo"
+import SliderFooter from "../component/slider/slider-footer";
 
 
 const ContactPage = ({ data }) => (
@@ -29,7 +30,7 @@ const ContactPage = ({ data }) => (
                 <input type="email" name="mail" required className="border-2 border-bleu-z" />
                 <label>Votre message</label>
                 <textarea className="border-2 w-full border-bleu-z " required rows="10"/>
-                <button className="bg-orange-z p-2 rounded-xl text-white font-black rounded w-max mt-5" value="Envoyer">
+                <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-black  w-max mt-5" value="Envoyer">
                 Envoyer 
                 </button>
             </form>
@@ -58,6 +59,7 @@ const ContactPage = ({ data }) => (
 
         </section>
 </article>
+<SliderFooter/>
     </main>
   </Layout>
 );

@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const IndexPage = ({ data }) => {
   const bgimage = {
@@ -126,6 +127,7 @@ return(
           })}
         </section>
       </article>
+      <SliderFooter />
     </main>
   </Layout>)
 };

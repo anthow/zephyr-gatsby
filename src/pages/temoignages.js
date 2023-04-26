@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import ReactAudioPlayer from "react-audio-player";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const temoignagesPage = ({ data }) => (
   <Layout>
@@ -14,10 +15,10 @@ const temoignagesPage = ({ data }) => (
       />
     
     <div className="flex flex-col gap-10 md:gap-20">
-      <article className="w-12/12 h-1/2">
+      <article className="w-12/12 ">
         <figure>
           <GatsbyImage
-            className=" "
+            className=" w-full"
             image={data.datoCmsPageTemoignage.imageTMoignage.gatsbyImageData}
             alt={data.datoCmsPageTemoignage.imageTMoignage.alt}
           />
@@ -55,6 +56,7 @@ const temoignagesPage = ({ data }) => (
         </section>
       </article>
     </div>
+    <SliderFooter />
   </Layout>
 );
 
@@ -80,7 +82,8 @@ export const query = graphql`
         description
         title
         image {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 3, height:400)
+
         }
       }
       imageTMoignage {

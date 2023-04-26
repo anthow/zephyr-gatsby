@@ -33,22 +33,7 @@ const Footer = () => (
     render={(data) => (
       <>
         <footer className="flex flex-col mt-20  gap-20 pb-5">
-          <ul className="w-10/12 m-auto   flex flex-col md:flex-row flex-wrap justify-center justify-items-stretch items-center  gap-5">
-            {data.datoCmsFooter.logoPartenaires.map((node) => (
-              <li className=" place-self-center ">
-                {/*}<a href={node.customData.url} rel="noreferrer" target="_blank" >{*/}
-
-                <figure className="  ">
-                  <GatsbyImage
-                    image={node.gatsbyImageData}
-                    className=" "
-                    alt={node.alt}
-                  />
-                </figure>
-                {/*} </a>{*/}
-              </li>
-            ))}
-          </ul>
+         
           <article className=" bg-slate-400 footer p-2">
             <section className="w-10/12 m-auto flex flex-col md:grid grid-cols-3">
               <div className="col-span-2 items-center md:items-start	 text-center md:text-left flex gap-5 flex-col">

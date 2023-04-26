@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Seo from "../component/seo";
 import { Link } from "gatsby";
+import SliderFooter from "../component/slider/slider-footer";
 
 
 const formation = ({ data }) => {
@@ -21,12 +22,12 @@ const formation = ({ data }) => {
           alt={data.datoCmsListesFormation.imageFormation.alt}
         />
         <article className="flex flex-col gap-20 w-10/12 m-auto">
-          <section className="flex m-auto md:w-6/12 m-auto flex-row items-center gap-10">
+          <section className="flex m-auto  m-auto flex-row items-center gap-10">
             <h1 className="text-center text-orange-z text-3xl font-black">
               {data.datoCmsListesFormation.nomDeLaFormation}
             </h1>
             <Link to="/inscription">
-<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+<button className="bg-bleu-z rounded-full py-2 px-4 text-white font-black">
 
 {data.datoCmsMenu.texteBoutonSInscrire}
 
@@ -116,7 +117,7 @@ const formation = ({ data }) => {
   }} className="text-center"
 />
 <Link to="/inscription">
-<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
 
 {data.datoCmsMenu.texteBoutonSInscrire}
 
@@ -124,6 +125,7 @@ const formation = ({ data }) => {
 </Link>
 </section>
         </article>
+        <SliderFooter />
       </main>
     </Layout>
   );

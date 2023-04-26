@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../component/layout";
 import Seo from "../component/seo";
 import { StaticImage } from "gatsby-plugin-image";
+import SliderFooter from "../component/slider/slider-footer";
 
 const activitePage = ({ data }) => (
   <>
@@ -34,6 +35,7 @@ const activitePage = ({ data }) => (
           />
         
         </article>
+        <SliderFooter />
       </main>
     </Layout>
   </>

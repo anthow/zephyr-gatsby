@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Layout from "../component/layout";
+import SliderFooter from "../component/slider/slider-footer";
 
 const Form = () => {
   return (
@@ -633,6 +634,7 @@ const Form = () => {
             </button>
           </form>
         </article>
+        <SliderFooter/>
       </main>
     </Layout>
   );

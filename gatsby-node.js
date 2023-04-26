@@ -4,6 +4,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
   const FormationTemplate = path.resolve("./src/templates/formation.js");
+  const nouvFormationTemplate = path.resolve("./src/templates/nouvFormationTemplate.js");
 
   // Individual blogs pages
   const blog = graphql(`
@@ -21,7 +22,7 @@ exports.createPages = ({ actions, graphql }) => {
       Promise.reject(result.errors);
     }
 
-    // Create product pages
+    // Create blog pages
     result.data.allDatoCmsActualite.edges.forEach(({ node }) => {
       createPage({
         path: `actu/${node.slug}`,
@@ -49,7 +50,7 @@ exports.createPages = ({ actions, graphql }) => {
       Promise.reject(result.errors);
     }
 
-    // Create atelier pages
+    // Create formation pages
     result.data.allDatoCmsListesFormation.edges.forEach(({ node }) => {
       createPage({
         path: `formations/${node.slug}`,
@@ -59,6 +60,35 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+    // création page nouvelle formation
+    const newformation = graphql(`
+    {
+      allDatoCmsPageNouvelleFormation{
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `).then((result) => {
+    if (result.errors) {
+      Promise.reject(result.errors);
+    }
+
+    // Create page nouvelle formation
+    result.data.allDatoCmsPageNouvelleFormation.edges.forEach(({ node }) => {
+      createPage({
+        path: `formations/${node.slug}`,
+        component: nouvFormationTemplate,
+        context: {
+          slug: node.slug,
+        },
+      });
+    });
+  });
+
+
   // Return a Promise which would wait for both the queries to resolve
-  return Promise.all([blog, actu]);
+  return Promise.all([blog, actu,newformation]);
 };

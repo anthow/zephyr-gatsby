@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const ActuPage = ({ data }) => (
   <Layout>
@@ -43,6 +44,7 @@ const ActuPage = ({ data }) => (
           })}
         </section>
       </article>
+      <SliderFooter/>
     </main>
   </Layout>
 );

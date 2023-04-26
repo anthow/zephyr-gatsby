@@ -3,6 +3,8 @@ import styled from "styled-components";
 import NavbarLink from "./navbarlink/navbarlkink";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
+import RS from "./navbarlink/rs";
+import Logo from "./navbarlink/logo";
 
 const Navigation = styled.nav`
   display: flex;
@@ -11,7 +13,7 @@ const Navigation = styled.nav`
   margin: 0 auto;
   z-index: 999;
   align-items: center;
-  padding:10px;
+  padding: 10px;
 
   @media (max-width: 768px) {
     position: sticky;
@@ -20,6 +22,13 @@ const Navigation = styled.nav`
     left: 0;
     right: 0;
     left: 0;
+  }
+`;
+
+const Testlogo = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 
@@ -37,10 +46,12 @@ const Toggle = styled.div`
 const Navbox = styled.div`
   display: flex;
   height: 100%;
-  justify-content: flex-end;
+  width:100%;
+  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 768px) {
+    display
     flex-direction: column;
     position: fixed;
     width: 100%;
@@ -90,19 +101,10 @@ const Navbar = () => {
 
   return (
     <Navigation classname="p-4 sm:mb-20 ">
-      <figure className="">
-        <Link to="/"></Link>
-
-        <StaticImage
-          src="https://res.cloudinary.com/liono/image/upload/v1673538982/Z%C3%A9phyr/logo_zephyr_itor5r.png"
-          alt="Logo Zéphyr"
-          width={100}
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          className="mr-2 md:mr-10"
-        />
-      </figure>
-
+      <Testlogo>
+        {" "}
+        <Logo className="md:hidden" />
+      </Testlogo>{" "}
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
@@ -110,12 +112,15 @@ const Navbar = () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
       {navbarOpen ? (
-        <Navbox>
+        <Navbox className="flex justify-between">
           <NavbarLink />
+          <RS />
         </Navbox>
       ) : (
-        <Navbox open>
+        <Navbox className="flex justify-between" open>
+          <Logo />
           <NavbarLink />
+          <RS />
         </Navbox>
       )}
     </Navigation>

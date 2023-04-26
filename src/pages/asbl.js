@@ -3,6 +3,7 @@ import Layout from "../component/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const asblPage = ({ data }) => {
   return (
@@ -81,6 +82,7 @@ const asblPage = ({ data }) => {
             />
           </section>
         </article>
+        <SliderFooter/>
       </main>
     </Layout>
   );

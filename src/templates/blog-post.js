@@ -3,6 +3,7 @@ import Layout from "../component/layout"
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const blogPost = ({data}) => {
   return (
@@ -29,7 +30,7 @@ const blogPost = ({data}) => {
 			</article>
 
 </div>
-
+<SliderFooter />
 </Layout>
   )
 }

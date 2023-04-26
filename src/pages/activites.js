@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../component/layout";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 const activitePage = ({ data }) => (
   <>
     <Seo
@@ -66,6 +67,7 @@ const activitePage = ({ data }) => (
             );
           })}
         </article>
+        <SliderFooter />
       </main>
     </Layout>
   </>

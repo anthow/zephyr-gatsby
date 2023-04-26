@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Seo from "../component/seo";
+import SliderFooter from "../component/slider/slider-footer";
 
 const formationPage = ({ data }) => (
   <Layout>
@@ -60,13 +61,13 @@ const formationPage = ({ data }) => (
                 </div>
                 <div className="flex flex-col md:flex-row gap-5">
                 <Link to="/inscription">
-<button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
 
 {data.datoCmsMenu.texteBoutonSInscrire}
 
 </button>
 </Link>                  <Link to={node.slug}>
-                    <button className="bg-orange-z p-2 rounded-xl text-white font-black">
+                    <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-black">
                       {" "}
                       En savoir plus{" "}
                     </button>
@@ -100,13 +101,13 @@ const formationPage = ({ data }) => (
                 <div className="flex flex-col md:flex-row gap-5">
                   <Link to="/inscription">
                     {" "}
-                    <button className="bg-bleu-z p-2 rounded-xl text-white font-black">
+                    <button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
                       {" "}
                       {data.datoCmsMenu.texteBoutonSInscrire}
                     </button>
                   </Link>
                   <Link to={node.slug}>
-                    <button className="bg-orange-z p-2 rounded-xl text-white font-black">
+                    <button className="bg-orange-z rounded-full py-2 px-4 text-white font-black">
                       {" "}
                       En savoir plus{" "}
                     </button>
@@ -118,6 +119,7 @@ const formationPage = ({ data }) => (
         )}
       </section>
     </main>
+    <SliderFooter />
   </Layout>
 );
 
