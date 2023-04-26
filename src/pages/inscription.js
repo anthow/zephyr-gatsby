@@ -135,6 +135,17 @@ const Form = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
+                  <label name="Numéro de registre national" htmlFor="Numéro de registre national">
+                    {" "}
+                    Numéro de registre national :
+                  </label>
+                  <input
+                    className="border"
+                    name="Numéro de registre national"
+                    type="text"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
                   <label name="nationalité" htmlFor="nationalité">nationalité</label>
                   <input className="border" name="nationalité" type="text" />
                 </div>
@@ -158,17 +169,7 @@ const Form = () => {
                     <option value="etudiant">Etudiant</option>
                   </select>{" "}
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label name="Numéro de registre national" htmlFor="Numéro de registre national">
-                    {" "}
-                    Numéro de registre national :
-                  </label>
-                  <input
-                    className="border"
-                    name="Numéro de registre national"
-                    type="text"
-                  />
-                </div>
+             
                 <div className="flex flex-col gap-2">
                   <label name="Numéro de Forem" htmlFor="Numéro de Forem">
                     {" "}
@@ -638,7 +639,7 @@ const Form = () => {
               </section>
             </div>
             <button
-              className="bg-orange-z rounded-xl px-4 mt-10 p-2 text-white"
+              className="bg-orange-z rounded-full py-2 px-4 text-white"
               type="submit"
             >
               Envoyer

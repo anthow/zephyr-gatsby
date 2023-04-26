@@ -24,6 +24,7 @@ const RS = () => (
           texteFormation
           texteTMoignages
         }
+        datoCmsPageNouvelleFormation{slug}
       }
     `}
     render={(data) => (
@@ -40,9 +41,11 @@ const RS = () => (
             </li>
 
           <li>
+            <Link to={"formations/"+data.datoCmsPageNouvelleFormation.slug}>
             <button className="bg-orange-z rounded-full py-2 px-4 text-white">
             {data.datoCmsMenu.texteBoutonFormation}
             </button>
+            </Link>
           </li>
         </ul>
         <ul className="flex  gap-5">
