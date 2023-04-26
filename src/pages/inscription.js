@@ -159,6 +159,17 @@ const Form = () => {
                   </select>{" "}
                 </div>
                 <div className="flex flex-col gap-2">
+                  <label name="Numéro de registre national" htmlFor="Numéro de registre national">
+                    {" "}
+                    Numéro de registre national :
+                  </label>
+                  <input
+                    className="border"
+                    name="Numéro de registre national"
+                    type="text"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
                   <label name="Numéro de Forem" htmlFor="Numéro de Forem">
                     {" "}
                     Numéro de Forem :
