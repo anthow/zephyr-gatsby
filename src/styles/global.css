@@ -28,3 +28,7 @@
         background-color:#9eabcd;
 
     }
+
+    ul li:hover{
+        color: "#F29400"
+    }

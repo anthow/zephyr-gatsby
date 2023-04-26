@@ -16,7 +16,7 @@ const Nouveformation = ({ data }) => {
       />
       <main className="flex flex-col gap-10 mb-20">
         <GatsbyImage
-          className=" m-auto max-w-full"
+          className=" m-auto w-full"
           image={
             data.datoCmsPageNouvelleFormation.imageFormation.gatsbyImageData
           }
@@ -32,8 +32,8 @@ const Nouveformation = ({ data }) => {
                 alt={data.datoCmsPageNouvelleFormation.logoFormation.alt}
               />
             </figure>
-            <ul className="flex gap-10">
-              <li>la formation</li>
+            <ul className="flex text-bleu-z text-lg gap-10">
+              <li className=" menu hover:text-white">la formation</li>
               <li>Les ressources</li>
               <li>Les vidéos</li>
             </ul>
@@ -164,7 +164,7 @@ export const query = graphql`
         }
       }
       imageFormation {
-        gatsbyImageData(aspectRatio: 3, height: 400)
+        gatsbyImageData(width:1800, height:500)
         alt
       }
       logoFormation {

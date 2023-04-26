@@ -18,7 +18,8 @@ const SliderFormation = () => (
     `}
     render={(data) => (
       <>
-          <ul className="w-10/12 m-auto  my-20  flex flex-col md:flex-row flex-wrap justify-center justify-items-stretch items-center  gap-5">
+          <ul className="w-10/12 m-auto  my-20  flex flex-col md:flex-row 
+          flex-wrap justify-center justify-items-stretch items-center  gap-5">
             {data.datoCmsPageNouvelleFormation.logosPartenaires.map((node) => (
               <li className=" place-self-center ">
                 {/*}<a href={node.customData.url} rel="noreferrer" target="_blank" >{*/}
