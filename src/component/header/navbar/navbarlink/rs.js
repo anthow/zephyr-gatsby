@@ -33,7 +33,7 @@ const RS = () => (
             {" "}
             <li>
             <Link to="/inscription">
-              <button className="bg-bleu-z text-white font-black rounded-full py-2 px-4 p-2 ">
+              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
               {data.datoCmsMenu.texteBoutonSInscrire}              
               </button>
               </Link>
@@ -42,7 +42,7 @@ const RS = () => (
 
           <li>
             <Link to={"formations/"+data.datoCmsPageNouvelleFormation.slug}>
-            <button className="bg-orange-z rounded-full py-2 px-4 text-white">
+            <button className="bg-orange-z font-medium text-white text-lg rounded-full py-1 px-4 hover:opacity-80">
             {data.datoCmsMenu.texteBoutonFormation}
             </button>
             </Link>

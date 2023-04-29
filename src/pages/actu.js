@@ -14,7 +14,7 @@ const ActuPage = ({ data }) => (
     />
     <main className="w-10/12 m-auto flex mt-10 flex-col gap-10 md:gap-20 mb-20">
       <article className=" m-auto flex flex-col  gap-10">
-        <h2 className="text-2xl text-bleu-z font-black">
+        <h2 className="text-2xl text-bleu-z font-semibold">
           Nos Dernières actualités
         </h2>
         <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">

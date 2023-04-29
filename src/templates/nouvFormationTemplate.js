@@ -38,7 +38,7 @@ const Nouveformation = ({ data }) => {
               <li>Les vidéos</li>
             </ul>
             <Link to="/inscription">
-              <button className="bg-bleu-z rounded-full py-2 px-4 text-white font-black">
+              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
                 {data.datoCmsMenu.texteBoutonSInscrire}
               </button>
             </Link>
@@ -46,7 +46,7 @@ const Nouveformation = ({ data }) => {
           <article className="flex flex-col gap-20 w-10/12 m-auto">
 
           <section className="flex flex-col gap-5">
-            <h1 className="text-center text-orange-z text-3xl font-black">
+            <h1 className="text-center text-orange-z text-3xl font-semibold">
               {data.datoCmsPageNouvelleFormation.titreFormation}
             </h1>
             <div
@@ -57,7 +57,7 @@ const Nouveformation = ({ data }) => {
           </section>
           <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z font-black">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreUn}
               </h2>
               <div
@@ -67,7 +67,7 @@ const Nouveformation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z font-black">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreDeux}
               </h2>
               <div
@@ -77,7 +77,7 @@ const Nouveformation = ({ data }) => {
               />
             </div>
             <section className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z font-black">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreTrois}
               </h2>
               <div
@@ -87,7 +87,7 @@ const Nouveformation = ({ data }) => {
               />
             </section>
             <section className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black">
+              <h2 className="text-2xl text-bleu-z  font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreQuatre}
               </h2>
               <div
@@ -98,7 +98,7 @@ const Nouveformation = ({ data }) => {
               </section>
                  <section className="flex flex-col gap-5">
 
-              <h3 className="text-xl text-bleu-z font-black">
+              <h3 className="text-xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreCinq}
               </h3>
               <div
@@ -110,7 +110,7 @@ const Nouveformation = ({ data }) => {
             </section>
 
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black">
+              <h2 className="text-2xl text-bleu-z  font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreSix}
               </h2>
               <div
@@ -120,7 +120,7 @@ const Nouveformation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black">
+              <h2 className="text-2xl text-bleu-z  font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreSept}
               </h2>
               <div
@@ -131,7 +131,7 @@ const Nouveformation = ({ data }) => {
             </div>
           </section>
           <section className="flex gap-5 flex-col items-center w-10/12 m-auto">
-            <h2 className="text-2xl text-bleu-z  font-black">
+            <h2 className="text-2xl text-bleu-z  font-semibold">
               {data.datoCmsPageNouvelleFormation.titreHuit}
             </h2>
             <div
@@ -141,7 +141,7 @@ const Nouveformation = ({ data }) => {
               className="text-center"
             />
             <Link to="/inscription">
-              <button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
+              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
                 {data.datoCmsMenu.texteBoutonSInscrire}
               </button>
             </Link>

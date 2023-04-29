@@ -22,7 +22,31 @@ module.exports = {
     },
     __key: "images"
   },
-  
+  {
+    resolve: `gatsby-plugin-webfonts`,
+    options: {
+      fonts: {
+        google: [
+          {
+            family: "Montserrat",
+            variants: ["400", "500", "600", "800"],
+            useMinify: true,
+            usePreload: true,
+            fontDisplay: "swap",
+            strategy: "selfHosted", // 'base64' || 'cdn'
+          },
+          {
+            family: "Roboto",
+            variants: ["400", "500", "600", "800"],
+            useMinify: true,
+            usePreload: true,
+            fontDisplay: "swap",
+            strategy: "selfHosted", // 'base64' || 'cdn'
+          },
+        ],
+      },
+    },
+  },
   {
     resolve: `gatsby-source-datocms`,
     options: {

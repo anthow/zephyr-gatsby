@@ -24,7 +24,7 @@ const activitePage = ({ data }) => (
           className="mr-2 md:mr-10 h-max w-1/2 md:w-1/4"
         />
         <article className=" flex flex-col items-center gap-10 p-10 rounded border border-bleu-z">
-          <h1 className="text-xl text-bleu-z font-black">
+          <h1 className="text-xl text-bleu-z font-semibold">
             {data.datoCmsValidationFormulaireDInscription.titreDeLaValidation}
           </h1>
           <div

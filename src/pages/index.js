@@ -23,7 +23,7 @@ return(
     <main className="flex flex-col gap-10 md:gap-20 mb-20">
       <article className="w-12/12 p-10 h-1/2" style={bgimage}>
         <section className="bg-white/70 flex flex-col gap-10 p-5 rounded-xl md:w-1/3">
-          <h1 className="text-3xl text-bleu-z font-black">
+          <h1 className="text-3xl text-bleu-z font-semibold">
             {data.datoCmsPageDAccueil.titreAccroche}
           </h1>
           <div className="flex flex-col gap-2"
@@ -32,7 +32,7 @@ return(
             }}
           />
 <Link to="/inscription">
-          <button className="bg-orange-z opacity-100                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           px-4 py-2 rounded-lg text-white font-bold hover:bg-gray-500 w-max">
+          <button className="bg-orange-z opacity-100                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           px-4 py-2 rounded-lg text-white font-semibold hover:bg-gray-500 w-max">
             {data.datoCmsMenu.texteBoutonSInscrire}
           </button>
           </Link>
@@ -40,7 +40,7 @@ return(
       </article>
 
       <article className="w-10/12 m-auto flex flex-col items-center gap-10">
-        <h2 className="text-2xl text-bleu-z font-black">Nos missions</h2>
+        <h2 className="text-2xl text-bleu-z font-semibold">Nos missions</h2>
         <section className="flex flex-col md:flex-row gap-20 justify-between">
           <div className="flex flex-col items-center gap-5">
             {/*}<figure>
@@ -98,7 +98,7 @@ return(
         </section>
       </article>
       <article className="w-10/12 m-auto flex flex-col  gap-10">
-        <h2 className="text-2xl text-bleu-z font-black">Nos Dernières actualités</h2>
+        <h2 className="text-2xl text-bleu-z font-semibold">Nos Dernières actualités</h2>
         <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
           {data.allDatoCmsActualite.edges.map(({ node }) => {
             return (

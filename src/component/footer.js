@@ -37,7 +37,7 @@ const Footer = () => (
           <article className=" bg-slate-400 footer p-2">
             <section className="w-10/12 m-auto flex flex-col md:grid grid-cols-3">
               <div className="col-span-2 items-center md:items-start	 text-center md:text-left flex gap-5 flex-col">
-                <h2 className="text-white font-black">Zéphyr ASBL</h2>
+                <h2 className="text-white font-semibold">Zéphyr ASBL</h2>
                 <div>
                   <p>Rue du Collège 31</p>
                   <p>4600 Visé</p>

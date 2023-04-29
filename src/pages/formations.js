@@ -22,7 +22,7 @@ const formationPage = ({ data }) => (
           />
         </figure>
         <section className="flex flex-col gap-5 ">
-          <h1 className="text-3xl text-bleu-z font-black">
+          <h1 className="text-3xl text-bleu-z font-semibold">
             {data.datoCmsPageFormation.titrePage}
           </h1>
           <div
@@ -49,7 +49,7 @@ const formationPage = ({ data }) => (
 
               <section className="flex flex-col gap-10 order-1 md:order-2 ">
                 <div className="flex flex-col gap-5">
-                  <h2 className="text-xl text-orange-z font-black">
+                  <h2 className="text-xl text-orange-z font-semibold">
                     {node.nomDeLaFormation}
                   </h2>
                   <div
@@ -61,13 +61,13 @@ const formationPage = ({ data }) => (
                 </div>
                 <div className="flex flex-col md:flex-row gap-5">
                 <Link to="/inscription">
-<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
+<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-semibold">
 
 {data.datoCmsMenu.texteBoutonSInscrire}
 
 </button>
 </Link>                  <Link to={node.slug}>
-                    <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-black">
+                    <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-semibold">
                       {" "}
                       En savoir plus{" "}
                     </button>
@@ -89,7 +89,7 @@ const formationPage = ({ data }) => (
 
               <section className="flex flex-col gap-10 order-2 md:order-1 ">
                 <div className="flex flex-col gap-5">
-                  <h2 className="text-xl text-orange-z font-black">
+                  <h2 className="text-xl text-orange-z font-semibold">
                     {node.nomDeLaFormation}
                   </h2>
                   <div
@@ -101,13 +101,13 @@ const formationPage = ({ data }) => (
                 <div className="flex flex-col md:flex-row gap-5">
                   <Link to="/inscription">
                     {" "}
-                    <button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
+                    <button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-semibold">
                       {" "}
                       {data.datoCmsMenu.texteBoutonSInscrire}
                     </button>
                   </Link>
                   <Link to={node.slug}>
-                    <button className="bg-orange-z rounded-full py-2 px-4 text-white font-black">
+                    <button className="bg-orange-z rounded-full py-2 px-4 text-white font-semibold">
                       {" "}
                       En savoir plus{" "}
                     </button>

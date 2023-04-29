@@ -112,14 +112,15 @@ const Navbar = () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
       {navbarOpen ? (
-        <Navbox className="flex justify-between">
+        <Navbox className="">
           <NavbarLink />
           <RS />
         </Navbox>
       ) : (
-        <Navbox className="flex justify-between" open>
+        <Navbox className="" open>
           <Logo />
-          <NavbarLink />
+          <NavbarLink/>
+
           <RS />
         </Navbox>
       )}

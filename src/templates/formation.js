@@ -6,11 +6,10 @@ import Seo from "../component/seo";
 import { Link } from "gatsby";
 import SliderFooter from "../component/slider/slider-footer";
 
-
 const formation = ({ data }) => {
   return (
     <Layout>
-       <Seo
+      <Seo
         title={data.datoCmsListesFormation.seo.title}
         description={data.datoCmsListesFormation.seo.description}
         image={data.datoCmsListesFormation.seo.image.gatsbyImageData}
@@ -23,20 +22,18 @@ const formation = ({ data }) => {
         />
         <article className="flex flex-col gap-20 w-10/12 m-auto">
           <section className="flex m-auto  m-auto flex-row items-center gap-10">
-            <h1 className="text-center text-orange-z text-3xl font-black">
+            <h1 className="text-center text-orange-z text-3xl font-semibold">
               {data.datoCmsListesFormation.nomDeLaFormation}
             </h1>
             <Link to="/inscription">
-<button className="bg-bleu-z rounded-full py-2 px-4 text-white font-black">
-
-{data.datoCmsMenu.texteBoutonSInscrire}
-
-</button>
-</Link>
+              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
+                {data.datoCmsMenu.texteBoutonSInscrire}
+              </button>
+            </Link>
           </section>
           <section className="flex flex-col gap-10 md:grid grid-cols-2 md:gap-20">
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z font-black">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsListesFormation.titreUn}
               </h2>
               <div
@@ -46,7 +43,7 @@ const formation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z font-black">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsListesFormation.titreDeux}
               </h2>
               <div
@@ -55,38 +52,40 @@ const formation = ({ data }) => {
                 }}
               />
             </div>
-          <section className="flex flex-col gap-5">
-            <h2 className="text-2xl text-bleu-z font-black">
-              {data.datoCmsListesFormation.titreTrois}
-            </h2>
-            <div
-              dangerouslySetInnerHTML={{
-                __html:
-                  data.datoCmsListesFormation.objectifCommunTousLesCoursDeFle,
-              }}
-            />
-          </section>
-          <section className="flex flex-col gap-5">
-            <h2 className="text-2xl text-bleu-z  font-black">
-              {data.datoCmsListesFormation.titreQuatre}
-            </h2>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.datoCmsListesFormation.organisation,
-              }}
-            />
-            <h3 className="text-xl text-bleu-z font-black">
-              {data.datoCmsListesFormation.titreCinq}
-            </h3>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.datoCmsListesFormation.niveaux,
-              }}
-            />
-          </section>
+            <section className="flex flex-col gap-5">
+              <h2 className="text-2xl text-bleu-z font-semibold">
+                {data.datoCmsListesFormation.titreTrois}
+              </h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html:
+                    data.datoCmsListesFormation.objectifCommunTousLesCoursDeFle,
+                }}
+              />
+            </section>
+            <section className="flex flex-col gap-5">
+              <h2 className="text-2xl text-bleu-z  font-semibold">
+                {data.datoCmsListesFormation.titreQuatre}
+              </h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.datoCmsListesFormation.organisation,
+                }}
+              />
+              <h3 className="text-xl text-bleu-z font-semibold">
+                {data.datoCmsListesFormation.titreCinq}
+              </h3>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.datoCmsListesFormation.niveaux,
+                }}
+              />
+            </section>
 
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black">{data.datoCmsListesFormation.titreSix}</h2>
+              <h2 className="text-2xl text-bleu-z  font-semibold">
+                {data.datoCmsListesFormation.titreSix}
+              </h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.datoCmsListesFormation.quelEstMonNiveau,
@@ -94,7 +93,7 @@ const formation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-black">
+              <h2 className="text-2xl text-bleu-z  font-semibold">
                 {data.datoCmsListesFormation.titreSept}
               </h2>
               <div
@@ -102,28 +101,24 @@ const formation = ({ data }) => {
                   __html: data.datoCmsListesFormation.fraisDInscription,
                 }}
               />
-              </div>
-             
-         
+            </div>
           </section>
           <section className="flex gap-5 flex-col items-center w-10/12 m-auto">
-
-<h2 className="text-2xl text-bleu-z  font-black">
-  {data.datoCmsListesFormation.titreHuit}
-</h2>
-<div
-  dangerouslySetInnerHTML={{
-    __html: data.datoCmsListesFormation.conclusion,
-  }} className="text-center"
-/>
-<Link to="/inscription">
-<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-black">
-
-{data.datoCmsMenu.texteBoutonSInscrire}
-
-</button>
-</Link>
-</section>
+            <h2 className="text-2xl text-bleu-z  font-semibold">
+              {data.datoCmsListesFormation.titreHuit}
+            </h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.datoCmsListesFormation.conclusion,
+              }}
+              className="text-center"
+            />
+            <Link to="/inscription">
+              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
+                {data.datoCmsMenu.texteBoutonSInscrire}
+              </button>
+            </Link>
+          </section>
         </article>
         <SliderFooter />
       </main>
@@ -133,7 +128,6 @@ const formation = ({ data }) => {
 
 export const query = graphql`
   query formationQuery($slug: String) {
-    
     datoCmsListesFormation(slug: { eq: $slug }) {
       seo {
         description
@@ -146,7 +140,7 @@ export const query = graphql`
       conditionDacces
       fraisDInscription
       imageFormation {
-        gatsbyImageData(aspectRatio: 3, height:400)
+        gatsbyImageData(aspectRatio: 3, height: 400)
         alt
       }
       niveaux
@@ -166,9 +160,7 @@ export const query = graphql`
       titreHuit
     }
     datoCmsMenu {
-   
       texteBoutonSInscrire
-    
     }
   }
 `;

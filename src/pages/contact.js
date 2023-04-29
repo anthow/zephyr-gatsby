@@ -11,8 +11,8 @@ const ContactPage = ({ data }) => (
   <Layout>
       <Seo title={data.datoCmsPageContact.seo.title } description={data.datoCmsPageContact.seo.description} image={data.datoCmsPageContact.seo.image.gatsbyImageData} />
     <main className=" w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
-      <h1 className="text-3xl text-center text-bleu-z mt-10 font-black"> Contact </h1>
-      <article className="flex flex-col gap-10 md:grid grid-cols-2">
+      <h1 className="text-3xl text-center text-bleu-z mt-10 font-semibold"> Contact </h1>
+      <article className="flex flex-col md:gap-20 gap-10 md:grid grid-cols-2">
         <section>
         <GatsbyImage image={data.datoCmsPageContact.imageFormulaireDeContact.gatsbyImageData} alt={data.datoCmsPageContact.imageFormulaireDeContact.alt} />
 
@@ -30,7 +30,8 @@ const ContactPage = ({ data }) => (
                 <input type="email" name="mail" required className="border-2 border-bleu-z" />
                 <label>Votre message</label>
                 <textarea className="border-2 w-full border-bleu-z " required rows="10"/>
-                <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-black  w-max mt-5" value="Envoyer">
+                <button className="bg-orange-z font-medium w-max text-white text-lg rounded-full py-1 px-4 hover:opacity-80" value="Envoyer">
+
                 Envoyer 
                 </button>
             </form>

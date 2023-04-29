@@ -25,7 +25,7 @@ const temoignagesPage = ({ data }) => (
         </figure>
       </article>
       <article className=" m-auto flex flex-col w-10/12 m-auto text-center  gap-10">
-        <h1 className="text-2xl text-bleu-z font-black">
+        <h1 className="text-2xl text-bleu-z font-semibold">
           {data.datoCmsPageTemoignage.titreDeLaPage}
         </h1>
         <div

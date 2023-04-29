@@ -14,14 +14,14 @@ const activitePage = ({ data }) => (
     <Layout>
       <main className="flex flex-col  gap-10  mb-20">
         <article className="w-10/12  m-auto  flex flex-col items-center gap-10 md:gap-20 md:grid grid-cols-2">
-          <figure className="mb-5">
+          <figure className="mb-5 ">
             <GatsbyImage
               image={data.datoCmsPageActivite.imagePage.gatsbyImageData}
               alt={data.datoCmsPageActivite.imagePage.alt}
             />
           </figure>
           <section className="flex flex-col gap-5 ">
-            <h1 className="text-3xl font-black text-bleu-z">
+            <h1 className="text-3xl font-semibold text-bleu-z">
               {data.datoCmsPageActivite.titrePage}
             </h1>
             <div
@@ -33,7 +33,7 @@ const activitePage = ({ data }) => (
         </article>
 
         <article className="w-10/12  m-auto" id="">
-          <h2 className="text-2xl text-bleu-z font-black">
+          <h2 className="text-2xl text-bleu-z font-semibold">
             Nos prochaines activités
           </h2>
         </article>
@@ -49,10 +49,10 @@ const activitePage = ({ data }) => (
                 </figure>
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-xl font-black text-bleu-z">
+                    <h3 className="text-xl font-semibold text-bleu-z">
                       {node.nomDeLActivit}
                     </h3>
-                    <p className="italic bg-orange-z w-max text-white font-black px-2">
+                    <p className="italic bg-orange-z w-max text-white font-semibold px-2">
                       {" "}
                       Le {node.dateEtHeure}
                     </p>
@@ -95,7 +95,7 @@ export const query = graphql`
         description
         title
         image {
-          gatsbyImageData
+          gatsbyImageData (height:100)
         }
       }
       textePage

@@ -6,7 +6,7 @@ const Form = () => {
   return (
     <Layout>
       <main className=" w-10/12 m-auto flex  flex-col gap-10 md:gap-20 mb-20">
-        <h1 className="text-3xl text-center mt-10 text-bleu-z font-black">
+        <h1 className="text-3xl text-center mt-10 text-bleu-z font-semibold">
           {" "}
           Formulaire d'inscription
         </h1>
@@ -22,51 +22,112 @@ const Form = () => {
             <div>
               <section className="flex flex-col gap-5 md:gap-x-40  md:grid grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label name="Nom" htmlFor="Nom">
+                  <label
+                    className="text-lg font-normal"
+                    name="Nom"
+                    htmlFor="Nom"
+                  >
                     Nom{" "}
                   </label>
 
-                  <input className="border" name="Nom" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Nom"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Prénom" htmlFor="Prénom">
+                  <label
+                    className="text-lg font-normal"
+                    name="Prénom"
+                    htmlFor="Prénom"
+                  >
                     Prénom
                   </label>
-                  <input className="border" name="Prénom" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Prénom"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Rue et N" htmlFor="Rue">
+                  <label
+                    className="text-lg font-normal"
+                    name="Rue et N"
+                    htmlFor="Rue"
+                  >
                     Rue et N°
                   </label>
-                  <input className="border" name="Rue et N" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Rue et N"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Code postal" htmlFor="Code postal">
+                  <label
+                    className="text-lg font-normal"
+                    name="Code postal"
+                    htmlFor="Code postal"
+                  >
                     Code postal
                   </label>
-                  <input className="border" name="Code postal" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Code postal"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="ville" htmlFor="Ville">
+                  <label
+                    className="text-lg font-normal"
+                    name="ville"
+                    htmlFor="Ville"
+                  >
                     Ville
                   </label>
-                  <input className="border" name="ville" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="ville"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="telephone" htmlFor="Téléphone/GSM">
+                  <label
+                    className="text-lg font-normal"
+                    name="telephone"
+                    htmlFor="Téléphone/GSM"
+                  >
                     Téléphone/GSM
                   </label>
-                  <input className="border" name="telephone" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="telephone"
+                    type="text"
+                  />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label name="mail" htmlFor="Mail">
+                  <label
+                    className="text-lg font-normal"
+                    name="mail"
+                    htmlFor="Mail"
+                  >
                     Mail
                   </label>
-                  <input className="border" name="mail" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="mail"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="Sexe" name="sexe" class="">
+                  <label
+                    className="text-lg font-normal"
+                    htmlFor="Sexe"
+                    name="sexe"
+                    class=""
+                  >
                     Sexe
                   </label>
                   <div>
@@ -91,23 +152,32 @@ const Form = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="année de naissance" htmlFor="Année de naissance">
+                  <label
+                    className="text-lg font-normal"
+                    name="année de naissance"
+                    htmlFor="Année de naissance"
+                  >
                     Année de naissance
                   </label>
                   <input
                     name="année de naissance"
-                    className="border"
+                    className="border border-bleu-z"
                     type="number"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
+                    className="font-normal text-lg"
                     name="type de carte d'identité"
                     htmlFor="type de carte d'identité"
                   >
                     type de carte d'identité
                   </label>
-                  <select name="type de carte d'identité" id="cardID">
+                  <select
+                    className="bg-white border p-1 border-bleu-z"
+                    name="type de carte d'identité"
+                    id="cardID"
+                  >
                     <option value="">--Veuillez choisir une option--</option>
                     <option value="CI Belge">CI Belge</option>
                     <option value="A">A</option>
@@ -123,6 +193,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
+                    className="text-lg"
                     name="Votre carte d'identité expire le"
                     htmlFor="Votre carte d'identité expire le"
                   >
@@ -130,36 +201,66 @@ const Form = () => {
                   </label>
                   <input
                     name="Votre carte d'identité expire le"
-                    className="border"
+                    className="border border-bleu-z"
                     type="date"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Numéro de registre national" htmlFor="Numéro de registre national">
+                  <label
+                    className="text-lg font-normal"
+                    name="Numéro de registre national"
+                    htmlFor="Numéro de registre national"
+                  >
                     {" "}
                     Numéro de registre national :
                   </label>
                   <input
-                    className="border"
+                    className="border border-bleu-z"
                     name="Numéro de registre national"
                     type="text"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="nationalité" htmlFor="nationalité">nationalité</label>
-                  <input className="border" name="nationalité" type="text" />
+                  <label
+                    className="text-lg font-normal"
+                    name="nationalité"
+                    htmlFor="nationalité"
+                  >
+                    nationalité
+                  </label>
+                  <input
+                    className="border border-bleu-z"
+                    name="nationalité"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Pays d'origine" htmlFor="Pays d'origine">
+                  <label
+                    className="text-lg font-normal"
+                    name="Pays d'origine"
+                    htmlFor="Pays d'origine"
+                  >
                     Pays d'origine
                   </label>
-                  <input name="Pays d'origine" className="border" type="text" />
+                  <input
+                    name="Pays d'origine"
+                    className="border border-bleu-z"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="satut" htmlFor="statut">
+                  <label
+                    className="text-lg font-normal"
+                    name="satut"
+                    htmlFor="statut"
+                  >
                     statut
                   </label>
-                  <select name="statut" id="statut">
+                  <select
+                    className="bg-white border p-1 border-bleu-z"
+                    name="statut"
+                    id="statut"
+                  >
                     <option value="">--Veuillez choisir une option--</option>
                     <option value="Sans revenu">Sans revenu</option>
                     <option value="CPAS">CPAS</option>
@@ -169,14 +270,18 @@ const Form = () => {
                     <option value="etudiant">Etudiant</option>
                   </select>{" "}
                 </div>
-             
+
                 <div className="flex flex-col gap-2">
-                  <label name="Numéro de Forem" htmlFor="Numéro de Forem">
+                  <label
+                    className="text-lg font-normal"
+                    name="Numéro de Forem"
+                    htmlFor="Numéro de Forem"
+                  >
                     {" "}
                     Numéro de Forem :
                   </label>
                   <input
-                    className="border"
+                    className="border border-bleu-z"
                     name="Numéro de Forem"
                     type="text"
                   />
@@ -191,7 +296,10 @@ const Form = () => {
                     Attestation CPAS:
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex mr-2 items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -200,7 +308,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -212,12 +323,19 @@ const Form = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="attestation forem" htmlFor="Attestation Forem:">
+                  <label
+                    className="text-lg font-normal"
+                    name="attestation forem"
+                    htmlFor="Attestation Forem:"
+                  >
                     {" "}
                     Attestation Forem:
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -226,7 +344,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -246,15 +367,23 @@ const Form = () => {
                   </label>
                   <input
                     name="Arrivé en Belgique le"
-                    className="border"
+                    className="border border-bleu-z"
                     type="date"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="raison" htmlFor="raison">
+                  <label
+                    className="text-lg font-normal"
+                    name="raison"
+                    htmlFor="raison"
+                  >
                     Raison
                   </label>
-                  <select name="raison" id="raison">
+                  <select
+                    className="bg-white border p-1 border-bleu-z"
+                    name="raison"
+                    id="raison"
+                  >
                     <option value="">--Veuillez choisir une option--</option>
                     <option value="mariage">Mariage</option>
                     <option value="regroupement familial">
@@ -268,7 +397,11 @@ const Form = () => {
                   </select>{" "}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="objectifs" htmlFor="Mes objectifs">
+                  <label
+                    className="text-lg font-normal"
+                    name="objectifs"
+                    htmlFor="Mes objectifs"
+                  >
                     Mes objectifs
                   </label>
                   <div className="flex gap-2 flex-wrap">
@@ -280,7 +413,11 @@ const Form = () => {
                         name="objectifs"
                         class=""
                       />
-                      <label for="sortir isolement" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="sortir isolement"
+                        class="ml-2 "
+                      >
                         Sortir de l'isolement
                       </label>
                     </div>
@@ -292,7 +429,11 @@ const Form = () => {
                         name="objectifs"
                         class=""
                       />
-                      <label for="sortir isolement" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="sortir isolement"
+                        class="ml-2 "
+                      >
                         Devenir autonome
                       </label>
                     </div>
@@ -304,7 +445,11 @@ const Form = () => {
                         name="objectifs"
                         class=""
                       />
-                      <label for="sortir isolement" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="sortir isolement"
+                        class="ml-2 "
+                      >
                         Aider les enfants à l’école
                       </label>
                     </div>
@@ -316,7 +461,11 @@ const Form = () => {
                         name="objectifs"
                         class=""
                       />
-                      <label for="sortir isolement" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="sortir isolement"
+                        class="ml-2 "
+                      >
                         Participer à la vie sociale
                       </label>
                     </div>
@@ -328,14 +477,22 @@ const Form = () => {
                         name="objectifs"
                         class=""
                       />
-                      <label for="sortir isolement" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="sortir isolement"
+                        class="ml-2 "
+                      >
                         Trouver un emploi
                       </label>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="je m'inscris aux" htmlFor="je m'inscris au(x):">
+                  <label
+                    className="text-lg font-normal"
+                    name="je m'inscris aux"
+                    htmlFor="je m'inscris au(x):"
+                  >
                     je m'inscris au(x):{" "}
                   </label>
                   <div className="flex gap-2 flex-wrap">
@@ -347,7 +504,11 @@ const Form = () => {
                         class=""
                         name="je m'inscris aux"
                       />
-                      <label for="Cours de français" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="Cours de français"
+                        class="ml-2 "
+                      >
                         Cours de français
                       </label>
                     </div>
@@ -359,7 +520,11 @@ const Form = () => {
                         class=""
                         name="je m'inscris"
                       />
-                      <label for="Table de conversation" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="Table de conversation"
+                        class="ml-2 "
+                      >
                         Table de conversation
                       </label>
                     </div>
@@ -371,7 +536,11 @@ const Form = () => {
                         class=""
                         name="je m'inscris"
                       />
-                      <label for="Cours de citoyenneté" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="Cours de citoyenneté"
+                        class="ml-2 "
+                      >
                         Cours de citoyenneté
                       </label>
                     </div>
@@ -383,7 +552,11 @@ const Form = () => {
                         class=""
                         name="je m'inscris"
                       />
-                      <label for="Ateliers socioculturels" class="ml-2 ">
+                      <label
+                        className="text-lg font-normal"
+                        for="Ateliers socioculturels"
+                        class="ml-2 "
+                      >
                         Ateliers socioculturels
                       </label>
                     </div>
@@ -398,7 +571,10 @@ const Form = () => {
                     Mon niveau de français:
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -407,7 +583,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Débutant</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -416,7 +595,10 @@ const Form = () => {
                       />
                       <span class="ml-2">A1</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -425,7 +607,10 @@ const Form = () => {
                       />
                       <span class="ml-2">A2</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -445,7 +630,10 @@ const Form = () => {
                     J'ai une équivalence de diplome:
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -454,7 +642,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -474,7 +665,7 @@ const Form = () => {
                     Dans mon pays j’ai travaillé comme :
                   </label>
                   <input
-                    className="border"
+                    className="border border-bleu-z"
                     name="Dans mon pays j’ai travaillé comme"
                     type="text"
                   />
@@ -488,17 +679,25 @@ const Form = () => {
                     Je souhaite trouver un emploi en :
                   </label>
                   <input
-                    className="border"
+                    className="border border-bleu-z"
                     type="text"
                     name="Je souhaite trouver un emploi en"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Langue maternelle" htmlFor="Langue maternelle">
+                  <label
+                    className="text-lg font-normal"
+                    name="Langue maternelle"
+                    htmlFor="Langue maternelle"
+                  >
                     {" "}
                     Langue maternelle
                   </label>
-                  <input className="border" name="Langue maternelle" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Langue maternelle"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
@@ -508,13 +707,25 @@ const Form = () => {
                     {" "}
                     Autres langues parlées / écrites :
                   </label>
-                  <input className="border" name="Autres langues" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Autres langues"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Dernier diplome" htmlFor="Dernier diplôme *: ">
+                  <label
+                    className="text-lg font-normal"
+                    name="Dernier diplome"
+                    htmlFor="Dernier diplôme *: "
+                  >
                     Dernier diplôme *:{" "}
                   </label>
-                  <select name="Dernier diplome" id="dernier diplome">
+                  <select
+                    className="bg-white border p-1 border-bleu-z"
+                    name="Dernier diplome"
+                    id="dernier diplome"
+                  >
                     <option value="">--Veuillez choisir une option--</option>
                     <option value="Sans">Sans</option>
                     <option value="CEB">CEB- 12 ans</option>
@@ -525,10 +736,18 @@ const Form = () => {
                   </select>{" "}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Diplomé en" htmlFor="Diplomé en:">
+                  <label
+                    className="text-lg font-normal"
+                    name="Diplomé en"
+                    htmlFor="Diplomé en:"
+                  >
                     Diplomé en:{" "}
                   </label>
-                  <input className="border" name="Diplomé en" type="text" />
+                  <input
+                    className="border border-bleu-z"
+                    name="Diplomé en"
+                    type="text"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
@@ -539,7 +758,10 @@ const Form = () => {
                     Je sais lire et écrire dans ma langue :*
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -548,7 +770,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -560,10 +785,18 @@ const Form = () => {
                   </div>{" "}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Envoyé par" htmlFor="Envoyé par">
+                  <label
+                    className="text-lg font-normal"
+                    name="Envoyé par"
+                    htmlFor="Envoyé par"
+                  >
                     Envoyé par{" "}
                   </label>
-                  <select name="Envoyé par" id="Envoyé par ">
+                  <select
+                    className="bg-white border p-1 border-bleu-z"
+                    name="Envoyé par"
+                    id="Envoyé par "
+                  >
                     <option value="">--Veuillez choisir une option--</option>
                     <option value="Cripel">Cripel</option>
                     <option value="Forem">Forem</option>
@@ -572,14 +805,21 @@ const Form = () => {
                   </select>{" "}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label name="Utilisation image" htmlFor="Accord à l’A.S.B.L.">
+                  <label
+                    className="text-lg font-normal"
+                    name="Utilisation image"
+                    htmlFor="Accord à l’A.S.B.L."
+                  >
                     Accorde à l’A.S.B.L. Zéphyr à utiliser les photographies et
                     le support audiovisuel fixant mon image et mes propos, dans
                     le cadre de la présentation des activités générales de
                     l’A.S.B.L. Zéphyr.
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -588,7 +828,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -608,7 +851,10 @@ const Form = () => {
                     Accepte que l’asbl Zéphyr traite mes données
                   </label>
                   <div>
-                    <label class="inline-flex items-center">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -617,7 +863,10 @@ const Form = () => {
                       />
                       <span class="ml-2">Oui</span>
                     </label>
-                    <label class="inline-flex items-center ml-6">
+                    <label
+                      className="text-lg font-normal"
+                      class="inline-flex items-center ml-6"
+                    >
                       <input
                         type="radio"
                         class="form-radio"
@@ -639,14 +888,14 @@ const Form = () => {
               </section>
             </div>
             <button
-              className="bg-orange-z rounded-full py-2 px-4 text-white"
+              className="bg-orange-z font-medium text-white text-lg rounded-full py-1 px-4 hover:opacity-80"
               type="submit"
             >
               Envoyer
             </button>
           </form>
         </article>
-        <SliderFooter/>
+        <SliderFooter />
       </main>
     </Layout>
   );

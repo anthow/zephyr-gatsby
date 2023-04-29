@@ -21,7 +21,7 @@ const blogPost = ({data}) => {
           />
 		<article className="flex flex-col gap-10 w-10/12 m-auto">
 		<section className="flex flex-col gap-2">
-			<h1 className=" text-3xl text-bleu-z font-black">{data.datoCmsActualite.nomDeLArticle}</h1>
+			<h1 className=" text-3xl text-bleu-z font-semibold">{data.datoCmsActualite.nomDeLArticle}</h1>
 			<p className="italic">le {data.datoCmsActualite.date}</p>
 			</section>
 

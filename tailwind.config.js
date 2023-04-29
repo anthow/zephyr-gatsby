@@ -5,13 +5,11 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        "bleu-z": "#1e95d3",
-        "orange-z": "#F29400",
-        "gris-z":"#0E3083",
-      },
-    },
+    extend: {colors: {
+      "bleu-z": "#1e95d3",
+      "orange-z": "#F29400",
+      "gris-z":"#0E3083",
+    },},
   },
   plugins: [],
-};
+}
