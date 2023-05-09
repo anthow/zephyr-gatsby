@@ -36,6 +36,7 @@
     "gatsby-transformer-sharp": "^5.6.0",
     "html-to-pdf": "^0.1.11",
     "html2canvas": "^1.4.1",
+    "moment": "^2.29.4",
     "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",

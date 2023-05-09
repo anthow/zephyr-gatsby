@@ -6,6 +6,7 @@ import Seo from "../component/seo";
 import SliderFooter from "../component/slider/slider-footer";
 
 const blogPost = ({data}) => {
+	
   return (
     <Layout>
 		 <Seo
@@ -44,9 +45,9 @@ query BlogQuery($slug: String) {
 			  gatsbyImageData
 			}
 		  }
-		date(formatString: "  dddd d MMMM YYYY", locale: "fr")
+		date(formatString: "  dddd DD MMMM YYYY", locale: "fr")
 		imageDeLArticle {
-		  alt
+		  alt 
 		  gatsbyImageData(aspectRatio: 1.5, height:400)
 		}
 		nomDeLArticle
@@ -58,4 +59,3 @@ query BlogQuery($slug: String) {
 `
 export default blogPost
 
-export const Head = () => <title>ASBL</title>
