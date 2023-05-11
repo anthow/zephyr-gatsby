@@ -23,6 +23,12 @@ module.exports = {
     __key: "images"
   },
   {
+    resolve: 'gatsby-plugin-buildtime-timezone',
+    options: {
+      tz: 'Europe/Brussels',
+    },
+  },
+  {
     resolve: `gatsby-plugin-webfonts`,
     options: {
       fonts: {

@@ -54,7 +54,7 @@ const activitePage = ({ data }) => (
                     </h3>
                     <p className="italic bg-orange-z w-max text-white font-semibold px-2">
                       {" "}
-                      Le {node.dateEtHeure}
+                      Le {node.dateEtHeure} à {node.heure}
                     </p>
                   </div>
                   <div dangerouslySetInnerHTML={{ __html: node.description }} />
@@ -78,7 +78,8 @@ export const query = graphql`
     allDatoCmsListesActivite {
       edges {
         node {
-          dateEtHeure(formatString: "dddd Do MMMM YY à h:mm  ", locale: "fr")
+          dateEtHeure(formatString: "dddd Do MMMM YY  ", locale: "fr")
+          heure
           description
           imageActivit {
             alt
