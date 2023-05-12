@@ -33,7 +33,7 @@ const RS = () => (
             {" "}
             <li>
             <Link to="/inscription">
-              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
+              <button className="bg-bleu-z  sm:mt-5 text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
               {data.datoCmsMenu.texteBoutonSInscrire}              
               </button>
               </Link>

@@ -112,7 +112,7 @@ const Navbar = () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
       {navbarOpen ? (
-        <Navbox className="">
+        <Navbox className="sm:flex  flex-col">
           <NavbarLink />
           <RS />
         </Navbox>

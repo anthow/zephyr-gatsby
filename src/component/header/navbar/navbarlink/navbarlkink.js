@@ -27,7 +27,7 @@ const NavbarLink = () => (
       }
     `}
     render={(data) => (
-      <nav className=" w-12/12 sm:mt-5 md:m-auto gap-5  flex flex-col md:flex-row md:justify-between items-center">
+      <nav className=" w-12/12 sm:mt-5 sm:mb-5 md:m-auto gap-5  flex flex-col md:flex-row md:justify-between items-center">
         <ul className="flex gap-5 flex-col text-center md:flex-row">
           <Link to="/" >
             {" "}

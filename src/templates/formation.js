@@ -21,7 +21,7 @@ const formation = ({ data }) => {
           alt={data.datoCmsListesFormation.imageFormation.alt}
         />
         <article className="flex flex-col gap-20 w-10/12 m-auto">
-          <section className="flex m-auto  m-auto flex-row items-center gap-10">
+          <section className="flex m-auto sm:flex-col  m-auto md:flex-row items-center gap-10">
             <h1 className="text-center text-orange-z text-3xl font-semibold">
               {data.datoCmsListesFormation.nomDeLaFormation}
             </h1>

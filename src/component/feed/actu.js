@@ -60,7 +60,7 @@ const Actu = () => {
                       alt={node.imageDeLArticle.alt}
                     />
                   </figure>
-                  <p className="italic">{node.catGorie.nomDeLaCategorie}</p>
+                  <p className=" hidden italic">{node.catGorie.nomDeLaCategorie}</p>
                 </div>
               </Link>
             );
