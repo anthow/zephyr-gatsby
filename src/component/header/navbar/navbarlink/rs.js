@@ -40,7 +40,7 @@ const RS = () => (
               
             </li>
 
-          <li>
+          <li className="hidden">
             <Link to={"../../formations/"+data.datoCmsPageNouvelleFormation.slug}>
             <button className="bg-orange-z font-medium text-white text-lg rounded-full py-1 px-4 hover:opacity-80">
             {data.datoCmsMenu.texteBoutonFormation}

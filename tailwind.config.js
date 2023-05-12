@@ -9,6 +9,9 @@ module.exports = {
       "bleu-z": "#1e95d3",
       "orange-z": "#F29400",
       "gris-z":"#0E3083",
+      "orangedeux-z":"#FFBC52",
+
+      
     },},
   },
   plugins: [],

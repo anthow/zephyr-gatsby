@@ -47,9 +47,9 @@ const Actu = () => {
                 <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
-                    <div className="flex flex-col  text-center">
-                      <p className="bg-orange-z p-2">{mois}</p>
-                      <div className="bg-orange-z/80 py-5 px-5 flex flex-col">
+                    <div className="flex flex-col p-2 text-center">
+                      <p className="bg-orange-z p-4">{mois}</p>
+                      <div className="bg-orange-z opacity-80 border-white border-t-2 py-5 px-5 flex flex-col">
                         <p>{jour}</p>
                       </div>
                     </div>
