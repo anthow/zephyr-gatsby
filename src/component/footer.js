@@ -157,11 +157,7 @@ const Footer = () => (
               </ul>
             </section>
           </article>
-          <div
-                dangerouslySetInnerHTML={{
-                  __html: data.datoCmsLienReseauxSociaux.cabinAnalytics,
-                }}
-              />
+        
         </footer>
       </>
     )}
