@@ -16,6 +16,7 @@ const Footer = () => (
         datoCmsLienReseauxSociaux {
           facebook
           whatsapp
+          cabinAnalytics
         }
         datoCmsMenu {
           texteAccueil
@@ -156,6 +157,11 @@ const Footer = () => (
               </ul>
             </section>
           </article>
+          <div
+                dangerouslySetInnerHTML={{
+                  __html: data.datoCmsLienReseauxSociaux.cabinAnalytics,
+                }}
+              />
         </footer>
       </>
     )}

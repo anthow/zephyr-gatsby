@@ -12,9 +12,6 @@ const Actu = () => {
           edges {
             node {
               slug
-              catGorie {
-                nomDeLaCategorie
-              }
               meta {
                 createdAt(formatString: "MMM YYYY", locale: "fr")
                 publishedAt(formatString: "ddd d", locale: "fr")
@@ -60,7 +57,6 @@ const Actu = () => {
                       alt={node.imageDeLArticle.alt}
                     />
                   </figure>
-                  <p className=" hidden italic">{node.catGorie.nomDeLaCategorie}</p>
                 </div>
               </Link>
             );
