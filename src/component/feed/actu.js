@@ -34,20 +34,22 @@ const Actu = () => {
  <>        <h2 className="text-2xl text-bleu-z font-semibold">
           Nos Dernières actualités
         </h2>
-        <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
+        <section className="flex flex-col md:grid grid-cols-3 auto-cols-fr items-center gap-20">
           {data.allDatoCmsActualite.edges.map(({ node }) => {
               const datejour = node.date
               const mois = moment(datejour).locale("fr").format("MMM YYYY");  
-              const jour = moment(datejour).locale("fr").format("dddd DD"); 
+              const jour = moment(datejour).locale("fr").format("dddd ");
+              const journée = moment(datejour).locale("fr").format(" DD");
             return (
               <Link to={"../actu/"+node.slug}>
-                <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
+                <div className="flex flex-col p-5 gap-10 bg-bleu-z h-40  text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
                     <div className="flex flex-col p-2 text-center">
                       <p className="bg-orange-z p-4">{mois}</p>
-                      <div className="bg-orange-z opacity-80 border-white border-t-2 py-5 px-5 flex flex-col">
+                      <div className="bg-orange-z opacity-80  border-white border-t-2 py-5 px-5 flex flex-col">
                         <p>{jour}</p>
+                        <p>{journée}</p>
                       </div>
                     </div>
                   </div>
