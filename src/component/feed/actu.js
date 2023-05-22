@@ -47,7 +47,7 @@ const Actu = () => {
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
                     <div className="flex flex-col p-2 text-center">
                       <p className="bg-orange-z p-4">{mois}</p>
-                      <div className="bg-orange-z opacity-80  border-white border-t-2 py-5 px-5 flex flex-col">
+                      <div className="bg-orange-z opacity-80 border-white border-t-2 py-5 px-5 flex flex-col">
                         <p>{jour}</p>
                         <p>{journée}</p>
                       </div>
