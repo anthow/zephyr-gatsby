@@ -40,7 +40,7 @@ const Actu = () => {
               const mois = moment(datejour).locale("fr").format("MMM YYYY");  
               const jour = moment(datejour).locale("fr").format("dddd DD"); 
             return (
-              <Link to={node.slug}>
+              <Link to={"../actu/"+node.slug}>
                 <div className="flex flex-col p-5 gap-10 bg-bleu-z text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
