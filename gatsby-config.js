@@ -5,10 +5,10 @@ module.exports = {
   siteMetadata: {
     title: `zephyr ASBL - Visé`,
     description: `Site internet de l'ASBL Zephyr à Visé`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.zephyr-formation.be`
   },
   plugins: ["gatsby-plugin-image", `gatsby-plugin-styled-components`, "gatsby-plugin-sitemap",
-  'gatsby-plugin-postcss',
+  'gatsby-plugin-postcss',`gatsby-plugin-sitemap`,'gatsby-plugin-minify-html',    'gatsby-plugin-optimize-svgs',
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
@@ -22,6 +22,15 @@ module.exports = {
     },
     __key: "images"
   },
+  {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      host: 'https://www.zephyr-formation.be/',
+      sitemap: 'https://www.zephyr-formation.be/sitemap.xml',
+      policy: [{userAgent: '*', allow: '/'}]
+    }
+  },
+
   {
     resolve: 'gatsby-plugin-buildtime-timezone',
     options: {
