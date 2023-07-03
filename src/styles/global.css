@@ -30,3 +30,7 @@
     ul li:hover{
         color: "#F29400"
     }
+
+    .actu{
+        min-height: 400px;
+    }

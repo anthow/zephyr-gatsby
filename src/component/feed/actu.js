@@ -42,7 +42,7 @@ const Actu = () => {
               const journée = moment(datejour).locale("fr").format(" DD");
             return (
               <Link to={"../actu/"+node.slug}>
-                <div className="flex flex-col p-5 gap-10 bg-bleu-z h-40  text-white">
+                <div className="flex flex-col p-5 gap-10 bg-bleu-z min-h-max actu  text-white">
                   <div className="flex flex-row gap-10 justify-between items-center">
                     <h3 className="text-xl">{node.nomDeLArticle}</h3>
                     <div className="flex flex-col p-2 text-center">
