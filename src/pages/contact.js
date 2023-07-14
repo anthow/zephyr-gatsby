@@ -30,12 +30,12 @@ const ContactPage = ({ data }) => (
         <section>
           <form
             className="flex flex-col gap-2"
-            name="inscription"
+            name="formulaire de contact"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
-            <input type="hidden" name="form-name" value="contact" />{" "}
+            <input type="hidden" name="form-name" value="contactform" />{" "}
             <label>Votre nom</label>
             <input
               type="text"
