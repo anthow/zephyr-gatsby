@@ -31,14 +31,12 @@ const ContactPage = ({ data }) => (
           <form
             className="flex flex-col gap-2"
             name="formulaire de contact"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            method="POST"
+            action="https://formspree.io/f/mrgwgvke"
           >
-            <input type="hidden" name="form-name" value="contactform" />{" "}
             <label>Votre nom</label>
             <input
-              type="text"
+              type="text" 
               name="Nom"
               required
               className="border-2 border-bleu-z"
