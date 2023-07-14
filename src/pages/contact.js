@@ -32,8 +32,8 @@ const ContactPage = ({ data }) => (
             className="flex flex-col gap-2"
             name="formulaire de contact"
             method="POST"
-            action="https://formspree.io/f/mrgwgvke"
-          >
+            action="https://formspree.io/f/xrgvrzwp"
+                      >
             <label>Votre nom</label>
             <input
               type="text" 
