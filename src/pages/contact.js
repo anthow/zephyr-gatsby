@@ -32,8 +32,8 @@ const ContactPage = ({ data }) => (
                 <input type="text" name="Prénom" required className="border-2 border-bleu-z" />
                 <label>Votre adresse mail</label>
                 <input type="email" name="mail" required className="border-2 border-bleu-z" />
-                <label>Votre message</label>
-                <textarea name="message"  className="border-2 w-full border-bleu-z " required rows="10"/>
+                <label name="message" >Votre message</label>
+                <textarea name="message" id="message"  className="border-2 w-full border-bleu-z " required rows="10"/>
                 <button className="bg-orange-z font-medium w-max text-white text-lg rounded-full py-1 px-4 hover:opacity-80" value="Envoyer">
 
                 Envoyer 
