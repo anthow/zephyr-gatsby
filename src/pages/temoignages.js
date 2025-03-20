@@ -3,15 +3,11 @@ import Layout from "../component/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import ReactAudioPlayer from "react-audio-player";
-import Seo from "../component/seo";
 import SliderFooter from "../component/slider/slider-footer";
 
 const temoignagesPage = ({ data }) => (
   <Layout>
-      <Seo
-        title={data.datoCmsPageTemoignage.seo.title}
-        description={data.datoCmsPageTemoignage.seo.description}
-      />
+  
     
     <div className="flex flex-col gap-10 md:gap-20">
       <article className="w-12/12 ">
