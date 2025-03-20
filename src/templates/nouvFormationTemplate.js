@@ -9,12 +9,10 @@ import SliderFormation from "../component/slider/slider-formation";
 const Nouveformation = ({ data }) => {
   return (
     <Layout>
-      {data.datoCmsPageNouvelleFormation && data.datoCmsPageNouvelleFormation.seo && (
         <Seo
           title={data.datoCmsPageNouvelleFormation.seo.title}
           description={data.datoCmsPageNouvelleFormation.seo.description}
         />
-      )}
       <main className="flex flex-col gap-10 mb-20">
         <GatsbyImage
           className="m-auto w-full"

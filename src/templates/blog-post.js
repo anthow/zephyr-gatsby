@@ -9,12 +9,11 @@ const blogPost = ({ data }) => {
 
   return (
     <Layout>
-      {data.datoCmsActualite && data.datoCmsActualite.seo && (
         <Seo
           title={data.datoCmsActualite.seo.title}
           description={data.datoCmsActualite.seo.description}
         />
-      )}
+      
       
       <div className="flex flex-col gap-10 mb-20">
         <GatsbyImage

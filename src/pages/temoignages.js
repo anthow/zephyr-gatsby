@@ -8,12 +8,10 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const temoignagesPage = ({ data }) => (
   <Layout>
-    {data.datoCmsPageTemoignage.seo && (
       <Seo
         title={data.datoCmsPageTemoignage.seo.title}
         description={data.datoCmsPageTemoignage.seo.description}
       />
-    )}
     
     <div className="flex flex-col gap-10 md:gap-20">
       <article className="w-12/12 ">

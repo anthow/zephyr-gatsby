@@ -9,12 +9,10 @@ import SliderFooter from "../component/slider/slider-footer";
 const formation = ({ data }) => {
   return (
     <Layout>
-      {data.datoCmsListesFormation && data.datoCmsListesFormation.seo && (
         <Seo
           title={data.datoCmsListesFormation.seo.title}
           description={data.datoCmsListesFormation.seo.description}
         />
-      )}
       <main className="flex flex-col gap-20 mb-20">
         <GatsbyImage
           className="m-auto max-w-full"

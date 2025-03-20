@@ -16,12 +16,10 @@ const IndexPage = ({ data }) => {
 
   return(
     <Layout>
-      {data.datoCmsPageDAccueil.seo && (
         <Seo
           title={data.datoCmsPageDAccueil.seo.title}
           description={data.datoCmsPageDAccueil.seo.description}
         />
-      )}
 
       <main className="flex flex-col gap-10 md:gap-20 mb-20">
         <article className="w-12/12 p-10 h-1/2" style={bgimage}>

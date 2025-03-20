@@ -8,12 +8,10 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const formationPage = ({ data }) => (
   <Layout>
-    {data.datoCmsPageFormation.seo && (
       <Seo
         title={data.datoCmsPageFormation.seo.title}
         description={data.datoCmsPageFormation.seo.description}
       />
-    )}
     <main className="flex flex-col gap-10 md:gap-20 mb-20">
       <article className="w-10/12 m-auto flex flex-col items-center gap-10 md:gap-20 md:grid grid-cols-2">
         <figure className="">

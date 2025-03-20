@@ -8,12 +8,10 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const ContactPage = ({ data }) => (
   <Layout>
-    {data.datoCmsPageContact.seo && (
       <Seo
         title={data.datoCmsPageContact.seo.title}
         description={data.datoCmsPageContact.seo.description}
       />
-    )}
     <main className="w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
       <h1 className="text-3xl text-center text-bleu-z mt-10 font-semibold">
         {" "}
