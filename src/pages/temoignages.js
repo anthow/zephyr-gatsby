@@ -9,7 +9,8 @@ const temoignagesPage = ({ data }) => (
   <Layout>
     <div className="flex flex-col gap-10 md:gap-20">
       <article className="w-12/12">
-        {data.datoCmsPageTemoignage.imageTMoignage && (
+        {/* Validation si imageTMoignage existe avant de tenter de l'afficher */}
+        {data.datoCmsPageTemoignage && data.datoCmsPageTemoignage.imageTMoignage && (
           <figure>
             <GatsbyImage
               className="w-full"
@@ -37,7 +38,8 @@ const temoignagesPage = ({ data }) => (
                   <ReactAudioPlayer src={node.enregistrement.url} controls />
                 </div>
                 <div className="flex gap-5 items-center flex-row">
-                  {node.drapeau && (
+                  {/* Validation si drapeau existe avant d'afficher l'image */}
+                  {node.drapeau && node.drapeau.gatsbyImageData && (
                     <GatsbyImage
                       className=""
                       image={node.drapeau.gatsbyImageData}
