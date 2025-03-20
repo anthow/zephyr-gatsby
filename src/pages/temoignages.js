@@ -7,17 +7,17 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const temoignagesPage = ({ data }) => (
   <Layout>
-  
-    
     <div className="flex flex-col gap-10 md:gap-20">
-      <article className="w-12/12 ">
-        <figure>
-          <GatsbyImage
-            className="w-full"
-            image={data.datoCmsPageTemoignage.imageTMoignage.gatsbyImageData}
-            alt={data.datoCmsPageTemoignage.imageTMoignage.alt}
-          />
-        </figure>
+      <article className="w-12/12">
+        {data.datoCmsPageTemoignage.imageTMoignage && (
+          <figure>
+            <GatsbyImage
+              className="w-full"
+              image={data.datoCmsPageTemoignage.imageTMoignage.gatsbyImageData}
+              alt={data.datoCmsPageTemoignage.imageTMoignage.alt}
+            />
+          </figure>
+        )}
       </article>
       <article className="m-auto flex flex-col w-10/12 m-auto text-center gap-10">
         <h1 className="text-2xl text-bleu-z font-semibold">
@@ -36,12 +36,14 @@ const temoignagesPage = ({ data }) => (
                 <div className="flex flex-row gap-10 justify-between items-center">
                   <ReactAudioPlayer src={node.enregistrement.url} controls />
                 </div>
-                <div className="flex gap-5 items-center flex-row ">
-                  <GatsbyImage
-                    className=" "
-                    image={node.drapeau.gatsbyImageData}
-                    alt={node.drapeau.alt}
-                  />
+                <div className="flex gap-5 items-center flex-row">
+                  {node.drapeau && (
+                    <GatsbyImage
+                      className=""
+                      image={node.drapeau.gatsbyImageData}
+                      alt={node.drapeau.alt}
+                    />
+                  )}
                   <p>{node.description}</p>
                 </div>
               </div>
