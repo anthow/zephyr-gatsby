@@ -1,15 +1,10 @@
 import React, { useRef } from "react";
 import Layout from "../component/layout";
 import SliderFooter from "../component/slider/slider-footer";
-import Seo from "../component/seo"; // Assurez-vous que ce composant existe dans votre projet.
 
 const Form = ({ data }) => {
   return (
     <Layout>
-        <Seo
-          title={data.datoCmsPageFormulaire.seo.title}
-          description={data.datoCmsPageFormulaire.seo.description}
-        />
 
       <main className="w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
         <h1 className="text-3xl text-center mt-10 text-bleu-z font-semibold">
