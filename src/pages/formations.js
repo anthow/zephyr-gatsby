@@ -12,7 +12,6 @@ const formationPage = ({ data }) => (
       <Seo
         title={data.datoCmsPageFormation.seo.title}
         description={data.datoCmsPageFormation.seo.description}
-        image={data.datoCmsPageFormation.seo.image ? data.datoCmsPageFormation.seo.image.gatsbyImageData : null}
       />
     )}
     <main className="flex flex-col gap-10 md:gap-20 mb-20">

@@ -10,7 +10,6 @@ const Form = ({ data }) => {
         <Seo
           title={data.datoCmsPageFormulaire.seo.title}
           description={data.datoCmsPageFormulaire.seo.description}
-          image={data.datoCmsPageFormulaire.seo.image ? data.datoCmsPageFormulaire.seo.image.gatsbyImageData : null}
         />
       )}
 

@@ -12,7 +12,6 @@ const temoignagesPage = ({ data }) => (
       <Seo
         title={data.datoCmsPageTemoignage.seo.title}
         description={data.datoCmsPageTemoignage.seo.description}
-        image={data.datoCmsPageTemoignage.seo.image ? data.datoCmsPageTemoignage.seo.image.gatsbyImageData : null}
       />
     )}
     

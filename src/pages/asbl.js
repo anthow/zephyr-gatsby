@@ -12,7 +12,6 @@ const asblPage = ({ data }) => {
         <Seo
           title={data.datoCmsPageAsbl.seo.title}
           description={data.datoCmsPageAsbl.seo.description}
-          image={data.datoCmsPageAsbl.seo.image ? data.datoCmsPageAsbl.seo.image.gatsbyImageData : null}
         />
       )}
       <main className="flex flex-col gap-20 mb-20">

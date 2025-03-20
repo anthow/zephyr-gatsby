@@ -20,7 +20,6 @@ const IndexPage = ({ data }) => {
         <Seo
           title={data.datoCmsPageDAccueil.seo.title}
           description={data.datoCmsPageDAccueil.seo.description}
-          image={data.datoCmsPageDAccueil.seo.image ? data.datoCmsPageDAccueil.seo.image.gatsbyImageData : null}
         />
       )}
 

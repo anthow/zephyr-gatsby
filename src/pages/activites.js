@@ -11,7 +11,6 @@ const activitePage = ({ data }) => (
       <Seo
         title={data.datoCmsPageActivite.seo.title}
         description={data.datoCmsPageActivite.seo.description}
-        image={data.datoCmsPageActivite.seo.image ? data.datoCmsPageActivite.seo.image.gatsbyImageData : null}
       />
     )}
     <Layout>

@@ -12,7 +12,6 @@ const ContactPage = ({ data }) => (
       <Seo
         title={data.datoCmsPageContact.seo.title}
         description={data.datoCmsPageContact.seo.description}
-        image={data.datoCmsPageContact.seo.image ? data.datoCmsPageContact.seo.image.gatsbyImageData : null}
       />
     )}
     <main className="w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">

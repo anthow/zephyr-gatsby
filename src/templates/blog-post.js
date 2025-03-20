@@ -13,7 +13,6 @@ const blogPost = ({ data }) => {
         <Seo
           title={data.datoCmsActualite.seo.title}
           description={data.datoCmsActualite.seo.description}
-          image={data.datoCmsActualite.seo.image ? data.datoCmsActualite.seo.image.gatsbyImageData : null}
         />
       )}
       
