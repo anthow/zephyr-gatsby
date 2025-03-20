@@ -9,42 +9,38 @@ import SliderFormation from "../component/slider/slider-formation";
 const Nouveformation = ({ data }) => {
   return (
     <Layout>
-      <Seo
-        title={data.datoCmsPageNouvelleFormation.seo.title}
-        description={data.datoCmsPageNouvelleFormation.seo.description}
-        image={data.datoCmsPageNouvelleFormation.seo.image.gatsbyImageData}
-      />
+      {data.datoCmsPageNouvelleFormation && data.datoCmsPageNouvelleFormation.seo && (
+        <Seo
+          title={data.datoCmsPageNouvelleFormation.seo.title}
+          description={data.datoCmsPageNouvelleFormation.seo.description}
+          image={data.datoCmsPageNouvelleFormation.seo.image ? data.datoCmsPageNouvelleFormation.seo.image.gatsbyImageData : null}
+        />
+      )}
       <main className="flex flex-col gap-10 mb-20">
         <GatsbyImage
-          className=" m-auto w-full"
-          image={
-            data.datoCmsPageNouvelleFormation.imageFormation.gatsbyImageData
-          }
+          className="m-auto w-full"
+          image={data.datoCmsPageNouvelleFormation.imageFormation.gatsbyImageData}
           alt={data.datoCmsPageNouvelleFormation.imageFormation.alt}
         />
-          <nav className="flex flex-col md:flex-row m-auto w-10/12 m-auto flex-row items-center justify-between md:gap-10">
-            <figure>
-              <GatsbyImage
-                image={
-                  data.datoCmsPageNouvelleFormation.logoFormation
-                    .gatsbyImageData
-                }
-                alt={data.datoCmsPageNouvelleFormation.logoFormation.alt}
-              />
-            </figure>
-            <ul className="flex text-bleu-z text-lg gap-10">
-              <li className=" menu hover:text-white">la formation</li>
-              <li>Les ressources</li>
-              <li>Les vidéos</li>
-            </ul>
-            <Link to="/inscription">
-              <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
-                {data.datoCmsMenu.texteBoutonSInscrire}
-              </button>
-            </Link>
-          </nav>
-          <article className="flex flex-col gap-20 w-10/12 m-auto">
-
+        <nav className="flex flex-col md:flex-row m-auto w-10/12 m-auto flex-row items-center justify-between md:gap-10">
+          <figure>
+            <GatsbyImage
+              image={data.datoCmsPageNouvelleFormation.logoFormation.gatsbyImageData}
+              alt={data.datoCmsPageNouvelleFormation.logoFormation.alt}
+            />
+          </figure>
+          <ul className="flex text-bleu-z text-lg gap-10">
+            <li className="menu hover:text-white">la formation</li>
+            <li>Les ressources</li>
+            <li>Les vidéos</li>
+          </ul>
+          <Link to="/inscription">
+            <button className="bg-bleu-z text-white text-lg font-medium rounded-full py-1 px-4 hover:opacity-80">
+              {data.datoCmsMenu.texteBoutonSInscrire}
+            </button>
+          </Link>
+        </nav>
+        <article className="flex flex-col gap-20 w-10/12 m-auto">
           <section className="flex flex-col gap-5">
             <h1 className="text-center text-orange-z text-3xl font-semibold">
               {data.datoCmsPageNouvelleFormation.titreFormation}
@@ -87,7 +83,7 @@ const Nouveformation = ({ data }) => {
               />
             </section>
             <section className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreQuatre}
               </h2>
               <div
@@ -95,9 +91,8 @@ const Nouveformation = ({ data }) => {
                   __html: data.datoCmsPageNouvelleFormation.texteQuatre,
                 }}
               />
-              </section>
-                 <section className="flex flex-col gap-5">
-
+            </section>
+            <section className="flex flex-col gap-5">
               <h3 className="text-xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreCinq}
               </h3>
@@ -106,11 +101,10 @@ const Nouveformation = ({ data }) => {
                   __html: data.datoCmsPageNouvelleFormation.texteCinq,
                 }}
               />
-            
             </section>
 
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreSix}
               </h2>
               <div
@@ -120,7 +114,7 @@ const Nouveformation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsPageNouvelleFormation.titreSept}
               </h2>
               <div
@@ -131,7 +125,7 @@ const Nouveformation = ({ data }) => {
             </div>
           </section>
           <section className="flex gap-5 flex-col items-center w-10/12 m-auto">
-            <h2 className="text-2xl text-bleu-z  font-semibold">
+            <h2 className="text-2xl text-bleu-z font-semibold">
               {data.datoCmsPageNouvelleFormation.titreHuit}
             </h2>
             <div
@@ -164,7 +158,7 @@ export const query = graphql`
         }
       }
       imageFormation {
-        gatsbyImageData(width:1800, height:500)
+        gatsbyImageData(width: 1800, height: 500)
         alt
       }
       logoFormation {

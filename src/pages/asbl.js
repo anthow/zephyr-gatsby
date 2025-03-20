@@ -8,11 +8,13 @@ import SliderFooter from "../component/slider/slider-footer";
 const asblPage = ({ data }) => {
   return (
     <Layout>
-      <Seo
-        title={data.datoCmsPageAsbl.seo.title}
-        description={data.datoCmsPageAsbl.seo.description}
-        image={data.datoCmsPageAsbl.seo.image.gatsbyImageData}
-      />
+      {data.datoCmsPageAsbl.seo && (
+        <Seo
+          title={data.datoCmsPageAsbl.seo.title}
+          description={data.datoCmsPageAsbl.seo.description}
+          image={data.datoCmsPageAsbl.seo.image ? data.datoCmsPageAsbl.seo.image.gatsbyImageData : null}
+        />
+      )}
       <main className="flex flex-col gap-20 mb-20">
         <article className="w-12/12 h-1/2">
           <figure>
@@ -39,13 +41,13 @@ const asblPage = ({ data }) => {
           <h2 className="text-2xl text-bleu-z text-center font-semibold">
             Notre Équipe
           </h2>
-          <section className="flex  flex-col  md:grid grid-cols-3 m-auto gap-y-10">
+          <section className="flex flex-col md:grid grid-cols-3 m-auto gap-y-10">
             {data.allDatoCmsListeEquipe.edges.map(({ node }) => {
               return (
-                <div className="flex flex-col gap-5 text-center   place-self-strech">
+                <div className="flex flex-col gap-5 text-center place-self-strech" key={node.id}>
                   <figure>
                     <GatsbyImage
-                      className=" rounded-full"
+                      className="rounded-full"
                       image={node.imageDeLaPersonne.gatsbyImageData}
                       alt={node.imageDeLaPersonne.alt}
                     />
@@ -63,7 +65,7 @@ const asblPage = ({ data }) => {
             })}
           </section>
         </article>
-        <article className="m-auto  w-10/12 flex flex-col md:grid grid-cols-2 gap-10 md:gap-20">
+        <article className="m-auto w-10/12 flex flex-col md:grid grid-cols-2 gap-10 md:gap-20">
           <figure>
             <GatsbyImage
               className=" m-auto max-w-full"
@@ -82,7 +84,7 @@ const asblPage = ({ data }) => {
             />
           </section>
         </article>
-        <SliderFooter/>
+        <SliderFooter />
       </main>
     </Layout>
   );
@@ -111,10 +113,10 @@ export const query = graphql`
         gatsbyImageData
       }
     }
-    allDatoCmsListeEquipe(sort: {ordre: ASC}) {
-      
+    allDatoCmsListeEquipe(sort: { ordre: ASC }) {
       edges {
         node {
+          id
           adresseMail
           fonction
           imageDeLaPersonne {

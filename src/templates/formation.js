@@ -9,19 +9,21 @@ import SliderFooter from "../component/slider/slider-footer";
 const formation = ({ data }) => {
   return (
     <Layout>
-      <Seo
-        title={data.datoCmsListesFormation.seo.title}
-        description={data.datoCmsListesFormation.seo.description}
-        image={data.datoCmsListesFormation.seo.image.gatsbyImageData}
-      />
+      {data.datoCmsListesFormation && data.datoCmsListesFormation.seo && (
+        <Seo
+          title={data.datoCmsListesFormation.seo.title}
+          description={data.datoCmsListesFormation.seo.description}
+          image={data.datoCmsListesFormation.seo.image ? data.datoCmsListesFormation.seo.image.gatsbyImageData : null}
+        />
+      )}
       <main className="flex flex-col gap-20 mb-20">
         <GatsbyImage
-          className=" m-auto max-w-full"
+          className="m-auto max-w-full"
           image={data.datoCmsListesFormation.imageFormation.gatsbyImageData}
           alt={data.datoCmsListesFormation.imageFormation.alt}
         />
         <article className="flex flex-col gap-20 w-10/12 m-auto">
-          <section className="flex m-auto sm:flex-col  m-auto md:flex-row items-center gap-10">
+          <section className="flex m-auto sm:flex-col m-auto md:flex-row items-center gap-10">
             <h1 className="text-center text-orange-z text-3xl font-semibold">
               {data.datoCmsListesFormation.nomDeLaFormation}
             </h1>
@@ -64,7 +66,7 @@ const formation = ({ data }) => {
               />
             </section>
             <section className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsListesFormation.titreQuatre}
               </h2>
               <div
@@ -83,7 +85,7 @@ const formation = ({ data }) => {
             </section>
 
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsListesFormation.titreSix}
               </h2>
               <div
@@ -93,7 +95,7 @@ const formation = ({ data }) => {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="text-2xl text-bleu-z  font-semibold">
+              <h2 className="text-2xl text-bleu-z font-semibold">
                 {data.datoCmsListesFormation.titreSept}
               </h2>
               <div
@@ -104,7 +106,7 @@ const formation = ({ data }) => {
             </div>
           </section>
           <section className="flex gap-5 flex-col items-center w-10/12 m-auto">
-            <h2 className="text-2xl text-bleu-z  font-semibold">
+            <h2 className="text-2xl text-bleu-z font-semibold">
               {data.datoCmsListesFormation.titreHuit}
             </h2>
             <div

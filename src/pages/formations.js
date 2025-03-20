@@ -8,13 +8,15 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const formationPage = ({ data }) => (
   <Layout>
-    <Seo
-      title={data.datoCmsPageFormation.seo.title}
-      description={data.datoCmsPageFormation.seo.description}
-      image={data.datoCmsPageFormation.seo.image.gatsbyImageData}
-    />
+    {data.datoCmsPageFormation.seo && (
+      <Seo
+        title={data.datoCmsPageFormation.seo.title}
+        description={data.datoCmsPageFormation.seo.description}
+        image={data.datoCmsPageFormation.seo.image ? data.datoCmsPageFormation.seo.image.gatsbyImageData : null}
+      />
+    )}
     <main className="flex flex-col gap-10 md:gap-20 mb-20">
-      <article className="w-10/12  m-auto  flex flex-col items-center gap-10 md:gap-20 md:grid grid-cols-2">
+      <article className="w-10/12 m-auto flex flex-col items-center gap-10 md:gap-20 md:grid grid-cols-2">
         <figure className="">
           <GatsbyImage
             image={data.datoCmsPageFormation.imagePage.gatsbyImageData}
@@ -33,7 +35,7 @@ const formationPage = ({ data }) => (
         </section>
       </article>
 
-      <section className="flex flex-col gap-20  ">
+      <section className="flex flex-col gap-20">
         {data.allDatoCmsListesFormation.edges.map(({ node }, i) =>
           i % 2 ? (
             <article
@@ -47,29 +49,27 @@ const formationPage = ({ data }) => (
                 />
               </figure>
 
-              <section className="flex flex-col gap-10 order-1 md:order-2 ">
+              <section className="flex flex-col gap-10 order-1 md:order-2">
                 <div className="flex flex-col gap-5">
                   <h2 className="text-xl text-orange-z font-semibold">
                     {node.nomDeLaFormation}
                   </h2>
                   <div
-                    className=" flex flex-col gap-2"
+                    className="flex flex-col gap-2"
                     dangerouslySetInnerHTML={{
                       __html: node.descriptionPageDAccueil,
                     }}
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-5">
-                <Link to="/inscription">
-<button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-semibold">
-
-{data.datoCmsMenu.texteBoutonSInscrire}
-
-</button>
-</Link>                  <Link to={node.slug}>
-                    <button className="bg-orange-z  rounded-full py-2 px-4 text-white font-semibold">
-                      {" "}
-                      En savoir plus{" "}
+                  <Link to="/inscription">
+                    <button className="bg-bleu-z rounded-full py-2 px-4 text-white font-semibold">
+                      {data.datoCmsMenu.texteBoutonSInscrire}
+                    </button>
+                  </Link>
+                  <Link to={node.slug}>
+                    <button className="bg-orange-z rounded-full py-2 px-4 text-white font-semibold">
+                      En savoir plus
                     </button>
                   </Link>
                 </div>
@@ -87,7 +87,7 @@ const formationPage = ({ data }) => (
                 />
               </figure>
 
-              <section className="flex flex-col gap-10 order-2 md:order-1 ">
+              <section className="flex flex-col gap-10 order-2 md:order-1">
                 <div className="flex flex-col gap-5">
                   <h2 className="text-xl text-orange-z font-semibold">
                     {node.nomDeLaFormation}
@@ -100,16 +100,13 @@ const formationPage = ({ data }) => (
                 </div>
                 <div className="flex flex-col md:flex-row gap-5">
                   <Link to="/inscription">
-                    {" "}
-                    <button className="bg-bleu-z  rounded-full py-2 px-4 text-white font-semibold">
-                      {" "}
+                    <button className="bg-bleu-z rounded-full py-2 px-4 text-white font-semibold">
                       {data.datoCmsMenu.texteBoutonSInscrire}
                     </button>
                   </Link>
                   <Link to={node.slug}>
                     <button className="bg-orange-z rounded-full py-2 px-4 text-white font-semibold">
-                      {" "}
-                      En savoir plus{" "}
+                      En savoir plus
                     </button>
                   </Link>
                 </div>
@@ -124,11 +121,9 @@ const formationPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query 
-    { datoCmsMenu {
-   
+  query {
+    datoCmsMenu {
       texteBoutonSInscrire
-    
     }
     allDatoCmsListesFormation {
       edges {

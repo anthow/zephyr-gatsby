@@ -8,12 +8,14 @@ import SliderFooter from "../component/slider/slider-footer";
 
 const ContactPage = ({ data }) => (
   <Layout>
-    <Seo
-      title={data.datoCmsPageContact.seo.title}
-      description={data.datoCmsPageContact.seo.description}
-      image={data.datoCmsPageContact.seo.image.gatsbyImageData}
-    />
-    <main className=" w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
+    {data.datoCmsPageContact.seo && (
+      <Seo
+        title={data.datoCmsPageContact.seo.title}
+        description={data.datoCmsPageContact.seo.description}
+        image={data.datoCmsPageContact.seo.image ? data.datoCmsPageContact.seo.image.gatsbyImageData : null}
+      />
+    )}
+    <main className="w-10/12 m-auto flex flex-col gap-10 md:gap-20 mb-20">
       <h1 className="text-3xl text-center text-bleu-z mt-10 font-semibold">
         {" "}
         Contact{" "}
@@ -21,9 +23,7 @@ const ContactPage = ({ data }) => (
       <article className="flex flex-col md:gap-20 gap-10 md:grid grid-cols-2">
         <section>
           <GatsbyImage
-            image={
-              data.datoCmsPageContact.imageFormulaireDeContact.gatsbyImageData
-            }
+            image={data.datoCmsPageContact.imageFormulaireDeContact.gatsbyImageData}
             alt={data.datoCmsPageContact.imageFormulaireDeContact.alt}
           />
         </section>
@@ -33,10 +33,10 @@ const ContactPage = ({ data }) => (
             name="formulaire de contact"
             method="POST"
             action="https://formspree.io/f/xrgvrzwp"
-                      >
+          >
             <label>Votre nom</label>
             <input
-              type="text" 
+              type="text"
               name="Nom"
               required
               className="border-2 border-bleu-z"
@@ -62,7 +62,7 @@ const ContactPage = ({ data }) => (
             >
               Message
             </label>
-         
+
             <textarea
               name="message"
               id="contact-form-message"

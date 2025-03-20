@@ -13,109 +13,67 @@ const IndexPage = ({ data }) => {
     backgroundImage:
       "url(" + data.datoCmsPageDAccueil.imageAccroche.fluid.src + ")",
   }
-return(
-  <Layout>
-     <Seo
-        title={data.datoCmsPageDAccueil.seo.title}
-        description={data.datoCmsPageDAccueil.seo.description}
-        image={data.datoCmsPageDAccueil.seo.image.gatsbyImageData}
-      />
-    
-    <main className="flex flex-col gap-10 md:gap-20 mb-20">
-      <article className="w-12/12 p-10 h-1/2" style={bgimage}>
-        <section className="bg-white/70 flex flex-col gap-10 p-5 rounded-xl md:w-1/3">
-          <h1 className="text-3xl text-bleu-z font-semibold">
-            {data.datoCmsPageDAccueil.titreAccroche}
-          </h1>
-          <div className="flex flex-col gap-2"
-            dangerouslySetInnerHTML={{
-              __html: data.datoCmsPageDAccueil.texteAccroche,
-            }}
-          />
-<Link to="/inscription">
-          <button className="bg-orange-z opacity-100                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           px-4 py-2 rounded-lg text-white font-semibold hover:bg-gray-500 w-max">
-            {data.datoCmsMenu.texteBoutonSInscrire}
-          </button>
-          </Link>
-        </section>
-      </article>
 
-      <article className="w-10/12 m-auto flex flex-col items-center gap-10">
-        <h2 className="text-2xl text-bleu-z font-semibold">Nos missions</h2>
-        <section className="flex flex-col md:flex-row gap-20 justify-between">
-          <div className="flex flex-col items-center gap-5">
-            {/*}<figure>
-              <GatsbyImage
-                className=" m-auto max-w-full"
-                image={data.datoCmsPageDAccueil.imageMission1.gatsbyImageData}
-                alt={data.datoCmsPageDAccueil.imageMission1.alt}
-              />
-            </figure>
-            <h3 className="text-xl">{data.datoCmsPageDAccueil.titreMission1}</h3>
-          {*/}
-            <div
-              className="text-center"
+  return(
+    <Layout>
+      {data.datoCmsPageDAccueil.seo && (
+        <Seo
+          title={data.datoCmsPageDAccueil.seo.title}
+          description={data.datoCmsPageDAccueil.seo.description}
+          image={data.datoCmsPageDAccueil.seo.image ? data.datoCmsPageDAccueil.seo.image.gatsbyImageData : null}
+        />
+      )}
+
+      <main className="flex flex-col gap-10 md:gap-20 mb-20">
+        <article className="w-12/12 p-10 h-1/2" style={bgimage}>
+          <section className="bg-white/70 flex flex-col gap-10 p-5 rounded-xl md:w-1/3">
+            <h1 className="text-3xl text-bleu-z font-semibold">
+              {data.datoCmsPageDAccueil.titreAccroche}
+            </h1>
+            <div className="flex flex-col gap-2"
               dangerouslySetInnerHTML={{
-                __html: data.datoCmsPageDAccueil.texteMission1,
+                __html: data.datoCmsPageDAccueil.texteAccroche,
               }}
             />
-          </div>
-          {/*}
-          <div className="flex flex-col items-center gap-5">
-            <figure>
-              <GatsbyImage
-                className=" m-auto max-w-full"
-                image={data.datoCmsPageDAccueil.imageMission2.gatsbyImageData}
-                alt={data.datoCmsPageDAccueil.imageMission2.alt}
-              />
-            </figure>
-            <h3 className="text-xl">{data.datoCmsPageDAccueil.titreMission2}</h3>
+            <Link to="/inscription">
+              <button className="bg-orange-z opacity-100 px-4 py-2 rounded-lg text-white font-semibold hover:bg-gray-500 w-max">
+                {data.datoCmsMenu.texteBoutonSInscrire}
+              </button>
+            </Link>
+          </section>
+        </article>
 
-            <div
-              className="text-center"
-              dangerouslySetInnerHTML={{
-                __html: data.datoCmsPageDAccueil.texteMission2,
-              }}
-            />
-          </div>
-          <div className="flex flex-col items-center gap-5">
-            <figure>
-              <GatsbyImage
-                className=" m-auto max-w-full"
-                image={data.datoCmsPageDAccueil.imageMission3.gatsbyImageData}
-                alt={data.datoCmsPageDAccueil.imageMission3.alt}
+        <article className="w-10/12 m-auto flex flex-col items-center gap-10">
+          <h2 className="text-2xl text-bleu-z font-semibold">Nos missions</h2>
+          <section className="flex flex-col md:flex-row gap-20 justify-between">
+            <div className="flex flex-col items-center gap-5">
+              <div
+                className="text-center"
+                dangerouslySetInnerHTML={{
+                  __html: data.datoCmsPageDAccueil.texteMission1,
+                }}
               />
-            </figure>
-            <h3 className="text-xl t"> {data.datoCmsPageDAccueil.titreMission3}</h3>
+            </div>
+          </section>
+        </article>
 
-            <div
-              className="text-center"
-              dangerouslySetInnerHTML={{
-                __html: data.datoCmsPageDAccueil.texteMission3,
-              }}
-            />
-          </div>
-            {*/}
-        </section>
-      </article>
-      <article className="w-10/12 m-auto flex flex-col  gap-10">
-        <Actu />
-      </article>
-      <SliderFooter />
-    </main>
-  </Layout>)
+        <article className="w-10/12 m-auto flex flex-col gap-10">
+          <Actu />
+        </article>
+
+        <SliderFooter />
+      </main>
+    </Layout>
+  );
 };
 
 export const query = graphql`
   query { 
     datoCmsMenu {
-   
-    texteBoutonSInscrire
-  
-  }
+      texteBoutonSInscrire
+    }
 
-    datoCmsPageDAccueil
-    {
+    datoCmsPageDAccueil {
       seo {
         description
         title
@@ -143,14 +101,14 @@ export const query = graphql`
         gatsbyImageData
         alt
       }
-imageAccroche
-{
-  fluid{
-    src
-  }
-  alt
-}
+      imageAccroche {
+        fluid {
+          src
+        }
+        alt
+      }
     }
+
     allDatoCmsActualite(limit: 6) {
       edges {
         node {
@@ -158,11 +116,11 @@ imageAccroche
           date
           catGorie {
             nomDeLaCategorie
-            }
-            meta {
+          }
+          meta {
             createdAt(formatString: "MMM YYYY", locale: "fr")
             publishedAt(formatString: "ddd d", locale: "fr")
-            }
+          }
           nomDeLArticle
           texteDeLArticle
           imageDeLArticle {
