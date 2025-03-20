@@ -22,12 +22,13 @@ const temoignagesPage = ({ data }) => (
       </article>
       <article className="m-auto flex flex-col w-10/12 m-auto text-center gap-10">
         <h1 className="text-2xl text-bleu-z font-semibold">
-          {data.datoCmsPageTemoignage.titreDeLaPage}
+          {/* Validation si titreDeLaPage existe avant de l'afficher */}
+          {data.datoCmsPageTemoignage && data.datoCmsPageTemoignage.titreDeLaPage && data.datoCmsPageTemoignage.titreDeLaPage}
         </h1>
         <div
           className="flex flex-col gap-5"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsPageTemoignage.textePage,
+            __html: data.datoCmsPageTemoignage && data.datoCmsPageTemoignage.textePage ? data.datoCmsPageTemoignage.textePage : '',
           }}
         />
         <section className="flex flex-col md:grid grid-cols-3 items-center gap-20">
@@ -35,7 +36,10 @@ const temoignagesPage = ({ data }) => (
             return (
               <div className="flex flex-col p-5 gap-10" key={node.id}>
                 <div className="flex flex-row gap-10 justify-between items-center">
-                  <ReactAudioPlayer src={node.enregistrement.url} controls />
+                  {/* Validation si enregistrement.url existe avant d'afficher le lecteur audio */}
+                  {node.enregistrement && node.enregistrement.url && (
+                    <ReactAudioPlayer src={node.enregistrement.url} controls />
+                  )}
                 </div>
                 <div className="flex gap-5 items-center flex-row">
                   {/* Validation si drapeau existe avant d'afficher l'image */}
